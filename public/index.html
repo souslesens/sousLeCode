@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/external/jquery/jquery.min.js"></script>
+    <script src="./js/external/jquery/jquery-ui.min.js"></script>
+    <link href="./js/external/jquery/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+
+    <script src="./js/external/async.js" charset="utf-8"></script>
+
+    <script src="js/common.js" charset="utf-8"></script>
+
+
+    <script src="./js/external/jsTree/jstree.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css"/>
+
+    <script type="text/javascript" src="./js/external/visjs/vis-network.min.js"></script>
+    <link href="./js/external/visjs/vis-network.css" rel="stylesheet" type="text/css"/>
+    <script src="./js/graph/visjsGraph2.js"></script>
+    <script src="./js/graph/canvas2svg.js"></script>
+    <script src="./js/graph/SVGexport.js"></script>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/codeEdition.js"></script>
+    <script src="./js/visjsData.js"></script>
+
+
+    <script src="./js/config.js"></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <style>
+        #graphDiv {
+            width: 800px;
+            height: 800px;
+
+        }
+
+        #fnTreeDiv {
+            width: 300px;
+            height: 800px;
+        }
+
+        #infosDiv {
+            width: 800px;
+            height: 150px;
+            border: #4f4221 solid 1px;
+        }
+
+    </style>
+
+</head>
+<body>
+<div style="display:flex;flex-direction: row">
+
+    <div id=leftPanel>
+        <button onclick="Main.drawAllCode()">draw all</button>
+        <div id="fnTreeDiv"></div>
+    </div>
+    <div>
+        <div id="infosDiv"></div>
+        <div id="graphDiv"></div>
+    </div>
+</div>
+<div id="mainDialogDiv">
+
+</div>
+
+<div id="graphPopupDiv" onclick="MainController.UI.hidePopup('graphPopupDiv');"
+     style=" z-index:20;position:absolute;flex-direction:column;padding:5px;border-radius:5px;text-align:center;display: none;background-color: #ddd">
+</div>
+
+</body>
+
+</div>
+
+
+<script>
+    $(function () {
+        Main.showCodeTree()
+        $("#mainDialogDiv").dialog({
+            autoOpen: false,
+            height: 800,
+            width: 800,
+            modal: false,
+        })
+
+    })
+
+
+</script>
+
+</html>

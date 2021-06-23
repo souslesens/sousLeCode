@@ -1,0 +1,1837 @@
+{
+  "ADLassetGraph.getAssetGlobalMappings": [
+    "async.series",
+    "ADLassetGraph.getBuiltMappingsStats",
+    "$.ajax",
+    "key.toLowerCase",
+    "common.deconcatSQLTableColumn",
+    "common.deconcatSQLTableColumn",
+    "common.deconcatSQLTableColumn",
+    "anchor.css",
+    "common.deconcatSQLTableColumn",
+    "common.deconcatSQLTableColumn",
+    "objectId.indexOf",
+    "objectId.indexOf",
+    "common.getRandomHexaId",
+    "label.lastIndexOf",
+    "label.substring"
+  ],
+  "ADLassetGraph.getBuiltMappingsStats": [
+    "Sparql_common.getFromStr",
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "Lineage_classes.getPropertyColor"
+  ],
+  "ADLassetGraph.drawAssetTablesMappingsGraph": [
+    "self.getAssetGlobalMappings",
+    "visjsGraph.draw"
+  ],
+  "ADLassetGraph.drawClassesAndPropertiesGraph": [
+    "async.series",
+    "ADLassetGraph.getBuiltMappingsStats",
+    "ADLassetGraph.getAssetGlobalMappings",
+    "predicate.indexOf",
+    "Lineage_classes.getPropertyColor",
+    "ADLassetGraph.getAssetGlobalModelFromTriples",
+    "subject.indexOf",
+    "subject.indexOf",
+    "object.indexOf",
+    "object.indexOf",
+    "visjsGraph.draw",
+    "visjsGraph.draw"
+  ],
+  "ADLassetGraph.getAssetGlobalModelFromTriples": [
+    "async.series",
+    "Sparql_common.getFromStr",
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "ids.push",
+    "ids.push",
+    "ids.push",
+    "common.sliceArray",
+    "async.eachSeries",
+    "Sparql_common.setFilter",
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "Sparql_common.getLabelFromId",
+    "ids.forEach",
+    "Sparql_common.getLabelFromId"
+  ],
+  "ADLassetGraph.zoomOnTable": [
+    "common.deconcatSQLTableColumn"
+  ],
+  "TextAnnotator.init": [],
+  "TextAnnotator.getSelected": [
+    "window.getSelection",
+    "document.getSelection",
+    "SourceBrowser.searchAllSourcesTerm"
+  ],
+  "TextAnnotator.setAnnotation": [
+    "document.createRange",
+    "document.createElement",
+    "newParent.setAttribute",
+    "newParent.setAttribute",
+    "newParent.setAttribute",
+    "newParent.setAttribute",
+    "xx.getRangeAt",
+    "range.surroundContents"
+  ],
+  "ADLbrowser.getPropertyColor": [
+    "Object.keys"
+  ],
+  "ADLbrowser.getSourceShape": [
+    "Object.keys"
+  ],
+  "ADLbrowser.onLoaded": [
+    "self.initOneModelDictionary"
+  ],
+  "ADLbrowser.initOneModelDictionary": [
+    "async.series",
+    "OwlSchema.initSourceSchema",
+    "Sparql_schema.getPropertiesRangeAndDomain",
+    "result.forEach",
+    "Sparql_schema.getClasses",
+    "result.forEach",
+    "Sparql_schema.getRestrictions",
+    "result.forEach"
+  ],
+  "ADLbrowser.searchAllSourcesTerm": [
+    "Sparql_INDIVIDUALS.findByWords",
+    "result.forEach",
+    "jstreeData.push",
+    "jstreeData.push"
+  ],
+  "ADLbrowser.showNodeInfos": [],
+  "ADLbrowser.getRdlJstreeData": [
+    "Sparql_common.getFromStr",
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "jstreeData.push",
+    "ADLbrowser.getRdlJstreeData",
+    "ADLbrowserQuery.setFilterFromSearchedTerm",
+    "MainController.writeUserLog",
+    "jstreeData.push",
+    "async.eachSeries",
+    "Sparql_generic.getNodeChildren",
+    "result.forEach",
+    "jstreeData.push",
+    "Object.keys",
+    "async.eachSeries",
+    "self.getRdlJstreeData",
+    "jstreeData.push",
+    "result.forEach",
+    "jstreeData.push",
+    "ADLbrowserQuery.loadAdl",
+    "async.series",
+    "jstreeData.push",
+    "jstreeData.forEach",
+    "adlClasses.indexOf",
+    "self.getPropertyColor",
+    "jstreeData.forEach",
+    "jstreeData.forEach",
+    "jstreeDataFiltered.push",
+    "jstreeData.forEach",
+    "existingNodesArray.forEach",
+    "result.forEach",
+    "jstreeData.push",
+    "self.getPropertyColor",
+    "jstreeData.push",
+    "self.getPropertyColor",
+    "result.forEach",
+    "jstreeData.push",
+    "self.getPropertyColor",
+    "jstreeData.push",
+    "jstreeData.push",
+    "self.getPropertyColor",
+    "self.showNodeInfos",
+    "ADLbrowserGraph.drawGraph",
+    "common.fillSelectOptions",
+    "Sparql_common.getFromStr",
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "array.push",
+    "async.series",
+    "Sparql_common.getFromStr",
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "model.forEach",
+    "model2.push",
+    "result.forEach",
+    "properties.push",
+    "result.forEach",
+    "types.indexOf",
+    "types.push",
+    "types.indexOf",
+    "types.push",
+    "common.fillSelectOptions",
+    "common.fillSelectOptions",
+    "common.fillSelectOptions",
+    "value.indexOf",
+    "numberOperators.indexOf",
+    "ADLbrowserGraph.drawGraph",
+    "common.getRandomHexaId",
+    "existingNodes.indexOf",
+    "jstreeData.push",
+    "Sparql_common.getLabelFromId",
+    "result.forEach",
+    "existingNodes.indexOf",
+    "jstreeData.push",
+    "common.getRandomHexaId",
+    "common.getRandomHexaId",
+    "Sparql_common.getFromStr",
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "data.push",
+    "common.fillSelectOptions",
+    "allNodes.forEach",
+    "console.log",
+    "str.replace",
+    "allNodes.forEach",
+    "processedTypes.push",
+    "sources.indexOf",
+    "sources.push",
+    "clause.replace",
+    "clause.replace",
+    "clause.replace",
+    "Sparql_common.getFromStr",
+    "common.copyTextToClipboard",
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "cols.push",
+    "line.push",
+    "line.push",
+    "dataSet.push"
+  ],
+  "ADLbrowserBI.drawClasses": [
+    "existingNodes.forEach",
+    "typeIds.push",
+    "Sparql_common.getFromStr",
+    "Sparql_common.setFilter",
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "data.push",
+    "console.log",
+    "data.push",
+    "data.push",
+    "data.forEach",
+    "values.push",
+    "self.getD3Scale",
+    "data.forEach",
+    "self.rgb2hex",
+    "Math.round",
+    "self.rgb2hex"
+  ],
+  "ADLbrowserBI.getD3Scale": [
+    "d3.min",
+    "d3.max",
+    "common.isNumber"
+  ],
+  "ADLbrowserBI.rgb2hex": [
+    "rgb.match"
+  ],
+  "ADLbrowserDataTable.showQueryResult": [
+    "varName.substring",
+    "cols.push",
+    "cols.push",
+    "line.push",
+    "line.push",
+    "dataSet.push"
+  ],
+  "ADLbrowserGraph.setGraphPopupMenus": [
+    "self.setGraphPopupMenuAllowedExpandsSelect"
+  ],
+  "ADLbrowserGraph.setGraphPopupMenuAllowedExpandsSelect": [
+    "ADLbrowserQuery.getClassesPredicates",
+    "retainedPredicates.forEach",
+    "array.push",
+    "common.fillSelectOptions"
+  ],
+  "ADLbrowserGraph.showgraphNodeNeighborhood": [
+    "ADLbrowser.showNodeInfos"
+  ],
+  "ADLbrowserGraph.clearGraph": [
+    "visjsGraph.clearGraph"
+  ],
+  "ADLbrowserGraph.collapseNode": [
+    "visjsGraph.collapseNode"
+  ],
+  "ADLbrowserGraph.selectNode": [],
+  "ADLbrowserGraph.cancelGraphNodeSelection": [],
+  "ADLbrowserGraph.addCountNodeToModelGraph": [
+    "Lineage_classes.getPropertyColor"
+  ],
+  "ADLbrowserGraph.drawGraph": [
+    "self.restoreCurrentGraph",
+    "varName.substring",
+    "visjsGraph.redraw",
+    "self.storeGraph",
+    "ADLbrowserGraph.setGraphPopupMenus",
+    "visjsGraph.draw",
+    "self.storeGraph"
+  ],
+  "ADLbrowserGraph.expandNode": [
+    "predicateStr.split",
+    "Sparql_common.getFromStr",
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "visjsGraph.getExistingIdsMap",
+    "Sparql_generic.setBindingsOptionalProperties"
+  ],
+  "ADLbrowserGraph.storeGraph": [],
+  "ADLbrowserGraph.restoreCurrentGraph": [
+    "visjsGraph.draw",
+    "oldIds.concat",
+    "oldIds.forEach"
+  ],
+  "ADLbrowserGraph.initGraphTab": [
+    "classes.push",
+    "ADLbrowserQuery.getClassesPredicates",
+    "common.fillSelectOptions"
+  ],
+  "ADLbrowserGraph.expandGraph": [
+    "predicateId.split",
+    "nodes.forEach",
+    "ids.push",
+    "ids.toString",
+    "Sparql_common.getFromStr",
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "Sparql_generic.setBindingsOptionalProperties",
+    "visjsGraph.getExistingIdsMap",
+    "Lineage_classes.getPropertyColor",
+    "classes.push",
+    "ADLbrowserQuery.getClassesPredicates",
+    "common.fillSelectOptions",
+    "nodes.forEach",
+    "jstreedata.push",
+    "jstreedata.push",
+    "visjsGraph.focusOnNode",
+    "visjsGraph.hideShowNodes",
+    "visjsGraph.hideShowNodes"
+  ],
+  "ADLbrowserQuery.onSelectADLtreeNode": [
+    "self.loadAdl",
+    "self.showQueryParamsDialog"
+  ],
+  "ADLbrowserQuery.hideQueryParamsDialog": [],
+  "ADLbrowserQuery.showQueryParamsDialog": [
+    "self.getClassesPredicates",
+    "predicates.forEach",
+    "self.showNodeProperties",
+    "common.fillSelectOptions",
+    "common.fillSelectOptions",
+    "common.fillSelectOptions"
+  ],
+  "ADLbrowserQuery.getClassesPredicates": [
+    "Array.isArray",
+    "classIds.forEach",
+    "predicate.indexOf",
+    "predicate.indexOf",
+    "retainedPredicates.push",
+    "predicate.indexOf",
+    "predicate.indexOf",
+    "retainedPredicates.push",
+    "retainedPredicates.push"
+  ],
+  "ADLbrowserQuery.onQueryParamsListClick": [
+    "ADLbrowserQuery.listQueryParamsDialogFieldValues"
+  ],
+  "ADLbrowserQuery.onQueryParamsListChange": [
+    "self.onQueryParamsDialogValidate"
+  ],
+  "ADLbrowserQuery.showNodeProperties": [
+    "properties.push",
+    "common.fillSelectOptions"
+  ],
+  "ADLbrowserQuery.listQueryParamsDialogFieldValues": [
+    "Sparql_common.getFromStr",
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "data.push",
+    "common.fillSelectOptions"
+  ],
+  "ADLbrowserQuery.updateAdlTree": [],
+  "ADLbrowserQuery.onSelectDialogField": [],
+  "ADLbrowserQuery.onOperatorSelect": [],
+  "ADLbrowserQuery.onQueryParamsDialogValidate": [
+    "Sparql_common.formatStringForTriple",
+    "value.indexOf",
+    "numberOperators.indexOf",
+    "common.isNumber",
+    "dialogFilterStr.indexOf",
+    "self.executeQuery",
+    "ADLbrowserGraph.addCountNodeToModelGraph"
+  ],
+  "ADLbrowserQuery.onQueryParamsDialogCancel": [],
+  "ADLbrowserQuery.addNodeToQueryTree": [
+    "common.getRandomHexaId",
+    "existingNodes.indexOf",
+    "jstreeData.push",
+    "Sparql_common.getLabelFromId",
+    "result.forEach",
+    "existingNodes.indexOf",
+    "jstreeData.push",
+    "common.getRandomHexaId"
+  ],
+  "ADLbrowserQuery.getQueryFilter": [
+    "visjsGraph.draw",
+    "self.getQueryFilter",
+    "self.executeQuery",
+    "Sparql_common.getLabelFromId",
+    "jstreeData.push",
+    "jstreeData.sort",
+    "filterDiv.attr",
+    "self.getQueryFilter",
+    "selectVars.push",
+    "self.executeQuery",
+    "ADLbrowserGraph.drawGraph",
+    "ADLbrowserDataTable.showQueryResult",
+    "ADLbrowserQuery.hideQueryParamsDialog",
+    "ADLbrowserQuery.showQueryParamsDialog",
+    "Sparql_common.getFromStr",
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "Sparql_generic.setBindingsOptionalProperties",
+    "jstreeData.push"
+  ],
+  "ADLbrowserQuery.executeQuery": [
+    "queryFilterNodes.forEach",
+    "queryFilterNodes.forEach",
+    "Sparql_common.getFromStr",
+    "Sparql_proxy.querySPARQL_GET_proxy"
+  ],
+  "ADLbrowserQuery.loadAdl": [
+    "ADLassetGraph.drawClassesAndPropertiesGraph"
+  ],
+  "ADLbrowserQuery.searchTerm": [
+    "Sparql_common.getFromStr",
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "Sparql_common.getLabelFromId",
+    "jstreeData.push",
+    "jstreeData.push"
+  ],
+  "ADLbrowserQuery.setFilterFromSearchedTerm": [
+    "self.showQueryParamsDialog"
+  ],
+  "ADLadvancedMapping.showAdvancedMappingDialog": [
+    "common.deconcatSQLTableColumn",
+    "$.ajax",
+    "JSON.stringify",
+    "common.deconcatSQLTableColumn",
+    "data.forEach",
+    "common.fillSelectOptions"
+  ],
+  "ADLadvancedMapping.runAutomaticMapping": [
+    "Sparql_common.setFilter",
+    "Sparql_generic.getItems",
+    "result.forEach"
+  ],
+  "ADLadvancedMapping.setQuantumRdlMappingTree": [
+    "common.deconcatSQLTableColumn",
+    "item.toLowerCase",
+    "orphansFilter.indexOf",
+    "Sparql_common.formatStringForTriple",
+    "$.ajax",
+    "JSON.stringify",
+    "existingNodes.indexOf",
+    "existingNodes.push",
+    "jstreeData.push",
+    "data.forEach",
+    "existingNodes.indexOf",
+    "existingNodes.push",
+    "jstreeData.push",
+    "ADLadvancedMapping.contextMenuFn"
+  ],
+  "ADLadvancedMapping.setDictionaryMappingTree": [
+    "common.deconcatSQLTableColumn",
+    "array.forEach",
+    "Lineage_classes.getSourceColor",
+    "async.series",
+    "item.trim",
+    "item.replace",
+    "item.replace",
+    "item.split",
+    "array1.forEach",
+    "item.toLowerCase",
+    "array.forEach",
+    "escapeWords.indexOf",
+    "word.charAt",
+    "word.substring",
+    "words.push",
+    "item.toLowerCase",
+    "orphansFilter.indexOf",
+    "exactValues.push",
+    "common.sliceArray",
+    "Object.keys",
+    "common.sliceArray",
+    "async.eachSeries",
+    "Sparql_common.getFromStr",
+    "values.forEach",
+    "Sparql_common.setFilter",
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "data.push",
+    "data.forEach",
+    "nodeIds.push",
+    "jstreeData.push",
+    "data.forEach",
+    "array.forEach",
+    "originalLabels.forEach",
+    "console.log",
+    "jstreeData.push",
+    "jstreeData.push",
+    "ADLadvancedMapping.contextMenuFn"
+  ],
+  "ADLadvancedMapping.contextMenuFn": [
+    "ADLadvancedMapping.setAsNewClassInDictionary"
+  ],
+  "ADLadvancedMapping.addValueManuallyFromOntology": [],
+  "ADLadvancedMapping.setAsNewClassInDictionary": [
+    "common.getRandomHexaId"
+  ],
+  "ADLadvancedMapping.validateMapping": [
+    "nodes.forEach",
+    "mappings.push",
+    "ambiguous.push",
+    "orphans.push",
+    "common.fillSelectOptions",
+    "common.fillSelectOptions",
+    "common.fillSelectOptions"
+  ],
+  "ADLadvancedMapping.cancelMapping": [],
+  "ADLadvancedMapping.exportTreeToCSV": [
+    "nodes.forEach",
+    "nodes.forEach",
+    "common.copyTextToClipboard"
+  ],
+  "ADLadvancedMapping.executeBulkMappingSequence": [
+    "async.eachSeries",
+    "async.eachSeries",
+    "async.eachSeries",
+    "self.setDictionaryMappingTree",
+    "jstreeData.concat",
+    "self.exportTreeToCSV",
+    "console.log"
+  ],
+  "ADLbuild.initDialog": [
+    "ADLmappings.checkMappingEditionSave"
+  ],
+  "ADLbuild.onAllTreeCbxChange": [
+    "$.each",
+    "nodes.push"
+  ],
+  "ADLbuild.buildTriples": [
+    "tables.push",
+    "table.replace",
+    "adlGraphUri.indexOf",
+    "JSON.stringify",
+    "$.ajax"
+  ],
+  "ADLbuild.serverMessage": [],
+  "ADLbuild.cancelBuild": [],
+  "ADLmappingData.initAdlsList": [
+    "adls.push",
+    "common.fillSelectOptions"
+  ],
+  "ADLmappingData.loadADL_SQLModel": [
+    "ADLmappings.clearMappings",
+    "$.ajax",
+    "JSON.stringify",
+    "self.addMappingDataToTableData",
+    "self.showModelJstree"
+  ],
+  "ADLmappingData.showModelJstree": [
+    "key.toLowerCase",
+    "modelJstreeData.push",
+    "key.toLowerCase",
+    "ADLmappings.checkMappingEditionSave",
+    "ADLassetGraph.zoomOnTable",
+    "ADLmappings.clearMappings",
+    "self.showSampleData",
+    "ADLmappings.loadMappings",
+    "self.contextMenuFn"
+  ],
+  "ADLmappingData.contextMenuFn": [
+    "ADLmappingData.showAddFilteredViewDialog"
+  ],
+  "ADLmappingData.addMappingDataToTableData": [
+    "ADLassetGraph.getBuiltMappingsStats",
+    "$.ajax",
+    "table.replace",
+    "view.replace",
+    "table.replace",
+    "anchor.css",
+    "anchor.css"
+  ],
+  "ADLmappingData.showAddFilteredViewDialog": [],
+  "ADLmappingData.addFilteredViewToTable": [],
+  "ADLmappingData.showSampleData": [
+    "data.forEach",
+    "cols.indexOf",
+    "cols.push",
+    "JSON.stringify",
+    "JSON.stringify",
+    "common.encodeToJqueryId",
+    "data.forEach",
+    "cols.forEach",
+    "event.stopPropagation",
+    "common.decodeFromJqueryId",
+    "nodeId.replace",
+    "$.ajax",
+    "JSON.stringify"
+  ],
+  "ADLmappingData.setDataSampleColumntype": [
+    "common.encodeToJqueryId",
+    "Array.isArray",
+    "ADLmappings.unAssignOntologyTypeToColumn",
+    "ADLadvancedMapping.showAdvancedMappingDialog",
+    "data.split",
+    "types.push",
+    "ADLmappings.AssignOntologyTypeToColumn"
+  ],
+  "ADLmappingData.assignConditionalType": [
+    "common.getRandomHexaId"
+  ],
+  "ADLmappingData.unAssignConditionalType": [],
+  "ADLmappingGraph.initMappedProperties": [],
+  "ADLmappingGraph.drawNode": [
+    "visjsGraph.getExistingIdsMap",
+    "Array.isArray",
+    "visjsGraph.draw",
+    "ADLmappings.displayPropertiesTree",
+    "visjsGraph.getExistingIdsMap",
+    "visjsGraph.draw"
+  ],
+  "ADLmappings.init": [],
+  "ADLmappings.onLoaded": [
+    "self.init",
+    "visjsGraph.clearGraph",
+    "ADLmappingData.initAdlsList",
+    "ADLmappings.displayOneModelTree",
+    "self.displayLiteralsTree"
+  ],
+  "ADLmappings.onSourceSelect": [
+    "MainController.writeUserLog",
+    "self.clearMappings",
+    "visjsGraph.clearGraph"
+  ],
+  "ADLmappings.selectTreeNodeFn": [
+    "ADLadvancedMapping.addValueManuallyFromOntology",
+    "ADLmappingData.assignConditionalType",
+    "self.AssignOntologyTypeToColumn",
+    "TextAnnotator.setAnnotation"
+  ],
+  "ADLmappings.selectPropertyTreeNodeFn": [
+    "TextAnnotator.setAnnotation"
+  ],
+  "ADLmappings.contextMenuFn": [
+    "self.showNodeInfos",
+    "SourceBrowser.openTreeNode",
+    "Lineage_common.copyNodeToClipboard",
+    "Lineage_common.pasteNodeFromClipboard"
+  ],
+  "ADLmappings.displayLiteralsTree": [
+    "jstreeData.push"
+  ],
+  "ADLmappings.displayOneModelTree": [
+    "propJstreeData.push",
+    "propJstreeData.push",
+    "common.getRandomHexaId",
+    "id.substring",
+    "id.lastIndexOf",
+    "propJstreeData.push",
+    "propJstreeData.push",
+    "common.getRandomHexaId",
+    "id.substring",
+    "id.lastIndexOf",
+    "propJstreeData.push",
+    "propJstreeData.push",
+    "self.contextMenuFn"
+  ],
+  "ADLmappings.displayPropertiesTree": [
+    "Lineage_properties.getPropertiesjsTreeData",
+    "jsTreeData.forEach",
+    "jsTreeData.push",
+    "jsTreeData2.concat",
+    "self.contextMenuFn"
+  ],
+  "ADLmappings.AssignOntologyTypeToColumn": [
+    "ADLmappingData.setDataSampleColumntype",
+    "Array.isArray",
+    "types.push",
+    "ADLmappingGraph.drawNode"
+  ],
+  "ADLmappings.unAssignOntologyTypeToColumn": [
+    "ADLmappingData.setDataSampleColumntype"
+  ],
+  "ADLmappings.checkMappingEditionSave": [],
+  "ADLmappings.loadMappings": [
+    "$.ajax",
+    "self.generateADLModel",
+    "self.AssignOntologyTypeToColumn",
+    "ADLmappingData.setDataSampleColumntype",
+    "associations.push",
+    "column.indexOf",
+    "column.substring",
+    "ADLmappingData.setDataSampleColumntype",
+    "associations.forEach"
+  ],
+  "ADLmappings.generateADLModel": [
+    "mappings.forEach"
+  ],
+  "ADLmappings.displayMappings": [
+    "self.generateMappings",
+    "common.copyTextToClipboard",
+    "JSON.stringify"
+  ],
+  "ADLmappings.saveMappings": [
+    "self.generateMappings",
+    "JSON.stringify",
+    "$.ajax"
+  ],
+  "ADLmappings.generateMappings": [
+    "visjsGraph.getNodesPosition"
+  ],
+  "ADLmappings.clearMappings": [
+    "ADLmappingGraph.initMappedProperties",
+    "visjsGraph.clearGraph"
+  ],
+  "ADLmappings.showNodeInfos": [
+    "Array.isArray"
+  ],
+  "Annotator.onLoaded": [],
+  "Annotator.onSourceSelect": [],
+  "Annotator.showActionPanel": [],
+  "Annotator.annotate": [
+    "sourcesLabels.forEach",
+    "sources.push",
+    "JSON.stringify",
+    "$.ajax",
+    "self.showAnnotationResult"
+  ],
+  "Annotator.showAnnotationResult": [
+    "Object.keys",
+    "sourcesLabels.forEach",
+    "sourcesLabels.forEach",
+    "Clipboard.copy"
+  ],
+  "Annotator.onNodeClick": [
+    "Clipboard.copy",
+    "self.getEntityInfo"
+  ],
+  "Annotator.getEntityInfo": [
+    "id.split",
+    "Sparql_generic.getSingleNodeAllGenealogy",
+    "result.forEach"
+  ],
+  "Annotator.setTestText": [],
+  "ChildHood.onSourceSelect": [],
+  "ChildHood.showActionPanel": [
+    "self.initsourceLabels"
+  ],
+  "ChildHood.initsourceLabels": [
+    "jsTreesourceLabels.forEach",
+    "Object.keys",
+    "sourceLabels.push"
+  ],
+  "ChildHood.displayGraph": [
+    "self.initsourceLabels",
+    "async.eachSeries",
+    "async.series",
+    "Sparql_generic.getTopConcepts",
+    "result.forEach",
+    "sourceNodes.push",
+    "sourceNodes.forEach",
+    "ids.push",
+    "Sparql_generic.getNodeChildren",
+    "result.forEach",
+    "sourceNodes.push",
+    "self.drawGraph"
+  ],
+  "ChildHood.drawGraph": [
+    "visjsGraph.draw"
+  ],
+  "Evaluate.onSourceSelect": [],
+  "Evaluate.onLoaded": [],
+  "Evaluate.showActionPanel": [
+    "common.fillSelectOptions",
+    "self.showWikiCategoriesTree"
+  ],
+  "Evaluate.onTreeClickNode": [
+    "activeTab.data",
+    "self.loadWikiPage",
+    "self.getWikipageMissingWords",
+    "self.addTreeChildrenNodes",
+    "self.showNodeConceptsGraph",
+    "self.addWikiPagesToTree"
+  ],
+  "Evaluate.onTabActivate": [
+    "self.loadWikiPage"
+  ],
+  "Evaluate.loadWikiPage": [],
+  "Evaluate.showWikiCategoriesTree": [
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "console.log",
+    "id.substring",
+    "id.lastIndexOf",
+    "nodes.push"
+  ],
+  "Evaluate.addTreeChildrenNodes": [
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "console.log",
+    "id.substring",
+    "id.lastIndexOf",
+    "nodes.push"
+  ],
+  "Evaluate.showNodeConceptsGraph": [
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "console.log",
+    "Math.max",
+    "Math.min",
+    "allnodes.indexOf",
+    "allnodes.push",
+    "allnodes.indexOf",
+    "allnodes.push",
+    "allnodes.indexOf",
+    "allnodes.push",
+    "allEdges.indexOf",
+    "allEdges.push",
+    "allEdges.indexOf",
+    "allEdges.push",
+    "allEdges.indexOf",
+    "allEdges.push",
+    "allEdges.indexOf",
+    "allEdges.push",
+    "visjsGraph.draw"
+  ],
+  "Evaluate.onGraphNodeClick": [
+    "Clipboard.copy"
+  ],
+  "Evaluate.filterGraphCategories": [
+    "self.querySPARQL_proxy",
+    "console.log",
+    "subject.substring",
+    "subject.lastIndexOf",
+    "broaderId.substring",
+    "broaderLabel.lastIndexOf"
+  ],
+  "Evaluate.addWikiPagesToTree": [
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "console.log",
+    "page.substring",
+    "page.lastIndexOf",
+    "nodes.push"
+  ],
+  "Evaluate.getWikipageMissingWords": [
+    "pageName.indexOf",
+    "pageName.substring",
+    "JSON.stringify",
+    "$.ajax",
+    "data.forEach"
+  ],
+  "Evaluate.onMissingWordClick": [
+    "Clipboard.copy"
+  ],
+  "Genealogy.onSourceSelect": [],
+  "Genealogy.showActionPanel": [
+    "self.initsourceLabels"
+  ],
+  "Genealogy.initsourceLabels": [
+    "jsTreesourceLabels.forEach",
+    "Object.keys",
+    "sourceLabels.push"
+  ],
+  "Genealogy.searchConcepts": [
+    "sourceLabels.forEach",
+    "sourceNodes.push",
+    "async.eachSeries",
+    "Sparql_generic.getNodeParents",
+    "console.log",
+    "result.forEach"
+  ],
+  "Genealogy.displayGraph": [
+    "visjsGraph.clearGraph",
+    "visjsGraph.draw",
+    "jstreeNodes.forEach",
+    "selectedConcepts.push",
+    "selectedConcepts.forEach",
+    "Sparql_generic.getNodeParents",
+    "console.log",
+    "self.addGenealogyGraph",
+    "self.drawSourceRootNode",
+    "sparql_abstract.getChildren",
+    "console.log",
+    "self.addChildrenNodesToGraph"
+  ],
+  "Genealogy.addGenealogyGraph": [
+    "visjsGraph.getExistingIdsMap",
+    "GraphController.toVisjsData"
+  ],
+  "Genealogy.onGraphNodeClick": [
+    "Clipboard.copy",
+    "Sparql_generic.getNodeChildren",
+    "console.log",
+    "result.forEach",
+    "GraphController.toVisjsData",
+    "self.searchConcepts"
+  ],
+  "Individuals.onLoaded": [],
+  "Individuals.onSourceSelect": [
+    "self.loadOntology",
+    "self.newTripleMapping"
+  ],
+  "Individuals.jstreeContextMenu": [
+    "self.setTripleObject",
+    "self.setTripleObject",
+    "self.setTripleObject",
+    "self.setTripleObject",
+    "self.setTripleObject"
+  ],
+  "Individuals.setTripleObject": [
+    "self.newTripleMapping",
+    "self.setConstaintsFilter",
+    "self.newTripleMapping"
+  ],
+  "Individuals.newTripleMapping": [
+    "common.getNewId",
+    "self.selectMappingTriple"
+  ],
+  "Individuals.deleteTripleDiv": [],
+  "Individuals.selectMappingTriple": [],
+  "Individuals.displayMappings": [
+    "data.push",
+    "JSON.stringify"
+  ],
+  "Individuals.setConstaintsFilter": [
+    "filteredItems.splice",
+    "filteredItems.splice",
+    "filteredItems.concat",
+    "jsonNodes.forEach",
+    "filteredItems.indexOf",
+    "filteredItems.indexOf"
+  ],
+  "Individuals.loadOntology": [
+    "async.series",
+    "Sparql_OWL.getNodeChildren",
+    "result.forEach",
+    "classJstreeData.push",
+    "classJstreeData.push",
+    "self.setConstaintsFilter",
+    "self.setTripleObject",
+    "Sparql_OWL.getItems",
+    "result.forEach",
+    "propertyJstreeData.push",
+    "self.setConstaintsFilter",
+    "self.setTripleObject",
+    "OwlSchema.initSourceSchema",
+    "Sparql_schema.getPropertiesRangeAndDomain",
+    "result.forEach",
+    "objs.push",
+    "Sparql_OWL.getObjectRestrictions",
+    "result.forEach",
+    "objs.push",
+    "objs.forEach"
+  ],
+  "Individuals.loadXlsModel": [
+    "$.ajax",
+    "modelJstreeData.push",
+    "modelJstreeData.push",
+    "self.jstreeContextMenu",
+    "console.log",
+    "JSON.stringify",
+    "console.log",
+    "JSON.stringify"
+  ],
+  "OntologiesStats.generateAllOwlStats": [
+    "async.eachSeries",
+    "async.eachSeries",
+    "fromArray.push",
+    "async.eachSeries",
+    "fromArray.indexOf",
+    "self.compareConcepts",
+    "resultArray.concat",
+    "console.log",
+    "JSON.stringify",
+    "JSON.stringify"
+  ],
+  "OntologiesStats.generateMatchingMatrix": [
+    "json.forEach",
+    "console.log"
+  ],
+  "OntologiesStats.drawMatchingGraph": [
+    "str.split",
+    "header.forEach",
+    "lines.forEach",
+    "line.split",
+    "cells.forEach",
+    "visjsGraph.draw"
+  ],
+  "OntologyBrowser.onLoaded": [],
+  "OntologyBrowser.onSourceSelect": [],
+  "OntologyBrowser.init": [],
+  "OntologyBrowser.getJstreeConceptsContextMenu": [],
+  "OntologyBrowser.selectTreeNodeFn": [],
+  "OntologyBrowser.checkTreeNodeFn": [],
+  "OntologyBrowser.showProperties": [
+    "async.series",
+    "OwlSchema.initSourceSchema",
+    "OwlSchema.getClassDescription",
+    "Sparql_schema.getClassPropertiesAndRanges",
+    "result.forEach",
+    "visjsGraph.getExistingIdsMap",
+    "Sparql_common.getLabelFromId",
+    "Object.keys",
+    "Sparql_common.getLabelFromId",
+    "Sparql_common.getLabelFromId",
+    "Object.keys",
+    "Sparql_common.getLabelFromId",
+    "Sparql_common.getLabelFromId",
+    "self.setGraphPopupMenus",
+    "visjsGraph.draw",
+    "self.init"
+  ],
+  "OntologyBrowser.setGraphPopupMenus": [],
+  "OntologyBrowser.onNodeClick": [
+    "OwlSchema.getClassDescription"
+  ],
+  "OntologyBrowser.showGraphPopupMenu": [
+    "self.setGraphPopupMenus",
+    "self.showProperties",
+    "Sparql_schema.getClassPropertiesAndRanges",
+    "OwlSchema.setLabelsFromQueryResult",
+    "result.forEach",
+    "existingItems.indexOf",
+    "existingItems.push",
+    "Sparql_common.getLabelFromId",
+    "OwlSchema.setLabelsFromQueryResult",
+    "visjsGraph.getExistingIdsMap",
+    "children.forEach",
+    "Sparql_common.getLabelFromId",
+    "existingNodes.indexOf",
+    "jstreeData.push",
+    "Sparql_common.getLabelFromId",
+    "existingNodes.indexOf",
+    "id.split",
+    "jstreeData.push",
+    "Sparql_common.getLabelFromId",
+    "OntologyBrowser.getJstreeConceptsContextMenu",
+    "common.fillSelectOptions",
+    "jstreeData.push",
+    "Math.random",
+    "nodes.forEach",
+    "classNodeIds.forEach",
+    "Object.keys",
+    "previousClasses.indexOf",
+    "previousClasses.indexOf",
+    "range.indexOf",
+    "value.indexOf",
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "cols.push",
+    "line.push",
+    "line.push",
+    "dataSet.push"
+  ],
+  "OwlSchema.setLabelsFromQueryResult": [
+    "bindings.forEach",
+    "key.indexOf",
+    "key.substring"
+  ],
+  "OwlSchema.initSourceSchema": [
+    "$.getJSON",
+    "console.log"
+  ],
+  "OwlSchema.getClassDescription": [
+    "async.series",
+    "self.initSourceSchema",
+    "Sparql_schema.getClasses",
+    "self.setLabelsFromQueryResult",
+    "result.forEach",
+    "common.getItemLabel",
+    "Sparql_schema.getClassProperties",
+    "self.setLabelsFromQueryResult",
+    "result.forEach",
+    "common.getItemLabel",
+    "common.getItemLabel",
+    "Sparql_schema.getObjectAnnotations",
+    "self.setLabelsFromQueryResult",
+    "result.forEach",
+    "common.getItemLabel",
+    "Object.keys",
+    "Sparql_schema.getPropertiesRangeAndDomain",
+    "self.setLabelsFromQueryResult",
+    "result.forEach"
+  ],
+  "SourceBrowser.onLoaded": [],
+  "SourceBrowser.onSourceSelect": [
+    "self.showThesaurusTopConcepts",
+    "Collection.initBrowserCollectionSelect"
+  ],
+  "SourceBrowser.selectTreeNodeFn": [
+    "self.copyNode",
+    "self.editThesaurusConceptInfos",
+    "self.openTreeNode"
+  ],
+  "SourceBrowser.copyNode": [
+    "Clipboard.copy"
+  ],
+  "SourceBrowser.showThesaurusTopConcepts": [
+    "Sparql_generic.getTopConcepts",
+    "self.getJstreeConceptsContextMenu",
+    "TreeController.drawOrUpdateTree"
+  ],
+  "SourceBrowser.getJstreeConceptsContextMenu": [
+    "ADLquery.showProperties",
+    "Lineage_classes.addArbitraryNodeToGraph",
+    "Lineage_common.copyNodeToClipboard",
+    "Lineage_classes.graphNodeNeighborhood",
+    "Lineage_classes.graphNodeNeighborhood",
+    "Lineage_classes.graphNodeNeighborhood",
+    "Lineage_common.pasteNodeFromClipboard",
+    "SourceEditor.editNode",
+    "Lineage_common.deleteNode",
+    "SourceBrowser.uploadOntologyFromOwlFile",
+    "SourceBrowser.copyNode"
+  ],
+  "SourceBrowser.openTreeNode": [
+    "Sparql_generic.getNodeChildren",
+    "TreeController.drawOrUpdateTree"
+  ],
+  "SourceBrowser.editThesaurusConceptInfos": [],
+  "SourceBrowser.onNodeDetailsLangChange": [],
+  "SourceBrowser.searchTerm": [
+    "SourceBrowser.getFilteredNodesJstreeData",
+    "self.editThesaurusConceptInfos",
+    "self.getJstreeConceptsContextMenu"
+  ],
+  "SourceBrowser.searchAllSourcesTerm": [
+    "searchedSources.push",
+    "searchedSources.push",
+    "async.eachSeries",
+    "SourceBrowser.getFilteredNodesJstreeData",
+    "jstreeData.push",
+    "result.forEach",
+    "jstreeData.push",
+    "self.editThesaurusConceptInfos",
+    "self.getJstreeConceptsContextMenu"
+  ],
+  "SourceBrowser.getFilteredNodesJstreeData": [
+    "Sparql_generic.getNodeParents",
+    "result.forEach",
+    "result.forEach",
+    "id.indexOf",
+    "jstreeData.push",
+    "jstreeData.push"
+  ],
+  "SourceBrowser.uploadOntologyFromOwlFile": [
+    "Array.isArray",
+    "$.ajax"
+  ],
+  "SourceMatcher.onSourceSelect": [
+    "SourceBrowser.showThesaurusTopConcepts",
+    "Object.keys",
+    "common.fillSelectOptions"
+  ],
+  "SourceMatcher.selectTreeNodeFn": [
+    "SourceBrowser.openTreeNode"
+  ],
+  "SourceMatcher.compareConcepts": [
+    "async.series",
+    "Sparql_generic.getNodeChildren",
+    "result.forEach",
+    "allSourceConcepts.push",
+    "childLabel.toLowerCase",
+    "Sparql_generic.getItems",
+    "result.forEach",
+    "allSourceConcepts.push",
+    "common.sliceArray",
+    "async.eachSeries",
+    "sourceConcepts.forEach",
+    "words.push",
+    "Sparql_generic.getNodeParents",
+    "result.forEach",
+    "targetBroaders.indexOf",
+    "targetBroaders.push",
+    "Object.keys",
+    "conceptIds.indexOf",
+    "conceptIds.push",
+    "common.sliceArray",
+    "async.eachSeries",
+    "Sparql_generic.getNodeParents",
+    "result.forEach",
+    "sourceBroaders.indexOf",
+    "sourceBroaders.push",
+    "broaders.forEach",
+    "uniqueNodes.indexOf",
+    "uniqueNodes.push",
+    "uniqueEdges.indexOf",
+    "uniqueEdges.push",
+    "uniqueNodes.indexOf",
+    "uniqueNodes.push",
+    "uniqueNodes.indexOf",
+    "uniqueNodes.push",
+    "uniqueEdges.indexOf",
+    "uniqueEdges.push",
+    "visjsGraph.draw",
+    "Math.max",
+    "Math.max",
+    "csv.split",
+    "lines.forEach",
+    "line.split",
+    "Math.max",
+    "cols.forEach",
+    "lineArray.push",
+    "dataSet.push",
+    "colnames.push",
+    "dataSet.forEach",
+    "line.push",
+    "Sparql_common.getFromGraphStr",
+    "Sparql_common.getFromGraphStr",
+    "Sparql_proxy.querySPARQL_GET_proxy"
+  ],
+  "SourceMatcher.onGraphClickNode": [
+    "Clipboard.copy"
+  ],
+  "SPARQL_endpoint.onSourceSelect": [
+    "localStorage.clear",
+    "self.initYasGuy"
+  ],
+  "SPARQL_endpoint.initYasGuy": [
+    "document.getElementById"
+  ],
+  "Blender.onLoaded": [
+    "editableSources.push",
+    "common.fillSelectOptions",
+    "editableSources.sort"
+  ],
+  "Blender.onSourceSelect": [
+    "Collection.removeTaxonomyFilter",
+    "async.series",
+    "OwlSchema.initSourceSchema",
+    "Sparql_generic.copyGraph",
+    "self.showFilteredTaxonomyTree",
+    "self.showTopConcepts",
+    "Collection.getJstreeContextMenu",
+    "TreeController.drawOrUpdateTree",
+    "Collection.openTreeNode"
+  ],
+  "Blender.copyGraph": [
+    "Sparql_generic.copyGraph"
+  ],
+  "Blender.showTopConcepts": [
+    "Sparql_generic.getTopConcepts",
+    "self.getConceptJstreeOptions",
+    "TreeController.drawOrUpdateTree"
+  ],
+  "Blender.getConceptJstreeOptions": [
+    "Blender.getJstreeConceptsContextMenu",
+    "console.log"
+  ],
+  "Blender.selectTreeNodeFn": [
+    "self.getJstreeConceptsContextMenu",
+    "SourceBrowser.openTreeNode",
+    "Clipboard.copy",
+    "ExternalReferences.openNarrowMatchNodes"
+  ],
+  "Blender.getJstreeConceptsContextMenu": [
+    "Clipboard.getContent",
+    "Clipboard.getContent",
+    "Sparql_generic.deleteTriples",
+    "Sparql_generic.insertTriples",
+    "Sparql_generic.deleteTriples",
+    "Sparql_generic.insertTriples",
+    "async.series",
+    "Sparql_generic.getSingleNodeAllDescendants",
+    "result.forEach",
+    "nodeIdsToDelete.push",
+    "result.forEach",
+    "nodeIdsToDelete.push",
+    "Sparql_generic.deleteTriples",
+    "Sparql_generic.deleteTriples",
+    "Clipboard.getContent",
+    "async.eachSeries",
+    "common.getNewUri",
+    "existingNodes.forEach",
+    "additionalTriplesNt.push",
+    "additionalTriplesNt.push",
+    "additionalTriplesNt.push",
+    "additionalTriplesNt.push",
+    "additionalTriplesNt.push",
+    "additionalTriplesNt.push",
+    "additionalTriplesNt.push",
+    "additionalTriplesNt.push",
+    "Sparql_generic.insertTriples",
+    "Sparql_generic.copyNodes",
+    "Clipboard.clear",
+    "Clipboard.getContent",
+    "async.eachSeries",
+    "Clipboard.clear",
+    "async.whilst",
+    "Sparql_generic.getNodeChildren",
+    "result.forEach",
+    "dataArray.push",
+    "Clipboard.getContent",
+    "Clipboard.clear",
+    "Clipboard.getContent",
+    "Clipboard.clear",
+    "SourceEditor.editNewObject",
+    "SourceEditor.editNode",
+    "SourceEditor.editNode",
+    "SourceEditor.editNode",
+    "SourceEditor.editNode",
+    "mandatoryProps.forEach",
+    "SourceEditor.editNode",
+    "SourceEditor.editNewObject",
+    "SourceEditor.saveEditingObject"
+  ],
+  "Blender.searchTerm": [],
+  "Blender.copyTriples": [],
+  "Blender.copyCsv": [
+    "Sparql_generic.getCollectionNodes",
+    "result.forEach",
+    "predicates.indexOf",
+    "predicates.push",
+    "predicates.splice",
+    "predicates.forEach",
+    "predicates.forEach",
+    "object.forEach",
+    "common.copyTextToClipboard"
+  ],
+  "Blender.showFilteredTaxonomyTree": [
+    "Sparql_generic.getCollectionNodes",
+    "result.forEach",
+    "common.getRandomHexaId",
+    "orphanBroaders.push",
+    "common.getRandomHexaId",
+    "jstreeData.push",
+    "self.getConceptJstreeOptions"
+  ],
+  "Collection.getJstreeContextMenu": [
+    "Collection.assignConcepts",
+    "Collection.filterConcepts",
+    "Collection.unAssignConcepts"
+  ],
+  "Collection.selectTreeNodeFn": [
+    "Collection.getJstreeContextMenu",
+    "self.filterConcepts",
+    "self.openTreeNode"
+  ],
+  "Collection.openTreeNode": [
+    "TreeController.drawOrUpdateTree"
+  ],
+  "Collection.assignConcepts": [
+    "nodes.forEach",
+    "conceptIds.push",
+    "newTreeNodes.push"
+  ],
+  "Collection.unAssignConcepts": [],
+  "Collection.filterConcepts": [
+    "Blender.showFilteredTaxonomyTree",
+    "Sparql_generic.getTopConcepts",
+    "Blender.getConceptJstreeOptions",
+    "TreeController.drawOrUpdateTree"
+  ],
+  "Collection.removeTaxonomyFilter": [
+    "Blender.showFilteredTaxonomyTree",
+    "Blender.showTopConcepts",
+    "Sparql_common.getFromGraphStr",
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "conceptIds.forEach",
+    "triples.push",
+    "Sparql_generic.insertTriples",
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "Sparql_common.getFromGraphStr",
+    "Sparql_proxy.querySPARQL_GET_proxy"
+  ],
+  "Collection.initBrowserCollectionSelect": [
+    "result.forEach",
+    "array.push",
+    "common.fillSelectOptions"
+  ],
+  "Collection.filterBrowserCollection": [
+    "SourceBrowser.showThesaurusTopConcepts"
+  ],
+  "ExternalReferences.getJstreeConceptsContextMenu": [
+    "ExternalReferences.showExternalReferenceNodeInfos",
+    "ExternalReferences.showExternalReferenceChildren",
+    "ExternalReferences.deleteReference"
+  ],
+  "ExternalReferences.openNarrowMatchNodes": [
+    "Sparql_generic.getNodeInfos",
+    "result.forEach",
+    "newTreeNodes.push"
+  ],
+  "ExternalReferences.pasteAsReference": [
+    "Clipboard.getContent",
+    "async.eachSeries",
+    "self.generateExternalUrl",
+    "newTreeNodes.push",
+    "Sparql_generic.insertTriples",
+    "Clipboard.clear"
+  ],
+  "ExternalReferences.showExternalReferenceChildren": [
+    "self.parseExternalUrl",
+    "Sparql_generic.getNodeChildren",
+    "TreeController.drawOrUpdateTree"
+  ],
+  "ExternalReferences.showExternalReferenceNodeInfos": [
+    "self.parseExternalUrl"
+  ],
+  "ExternalReferences.parseExternalUrl": [
+    "url.indexOf",
+    "url.substring",
+    "url.substring",
+    "params.forEach",
+    "str.split"
+  ],
+  "ExternalReferences.generateExternalUrl": [],
+  "ExternalReferences.importReferenceNode": [
+    "self.parseExternalUrl",
+    "Clipboard.copy"
+  ],
+  "ExternalReferences.importReferenceDescendants": [
+    "self.importReferenceNode"
+  ],
+  "ExternalReferences.deleteReference": [
+    "Sparql_generic.deleteTriples"
+  ],
+  "Import.showImportNodesDialog": [],
+  "Import.importNodes": [
+    "str.replace",
+    "str.split",
+    "words.forEach",
+    "common.getNewUri",
+    "Sparql_common.formatStringForTriple",
+    "word.trim",
+    "words2.push",
+    "triples.push",
+    "triples.push",
+    "triples.push",
+    "triples.push",
+    "Sparql_generic.insertTriples",
+    "words2.forEach",
+    "jsTreeData.push",
+    "self.clearImportNodesDialog"
+  ],
+  "Import.clearImportNodesDialog": [],
+  "SourceEditor.onLoaded": [],
+  "SourceEditor.getJstreeConceptsContextMenu": [
+    "SourceEditor.onAddNewObject",
+    "SourceEditor.deleteEditingObject"
+  ],
+  "SourceEditor.onSourceSelect": [
+    "OwlSchema.initSourceSchema",
+    "self.getJstreeConceptsContextMenu",
+    "SourceBrowser.showThesaurusTopConcepts"
+  ],
+  "SourceEditor.selectTreeNodeFn": [
+    "self.editjstreeNode",
+    "SourceBrowser.openTreeNode"
+  ],
+  "SourceEditor.onAddNewObject": [
+    "common.fillSelectOptions",
+    "mandatoryProps.forEach",
+    "self.editNewObject"
+  ],
+  "SourceEditor.editNewObject": [
+    "OwlSchema.getClassDescription",
+    "common.getNewUri",
+    "self.editNode"
+  ],
+  "SourceEditor.getNewUri": [
+    "sourceUri.lastIndexOf",
+    "common.getRandomHexaId"
+  ],
+  "SourceEditor.editjstreeNode": [
+    "self.editNode"
+  ],
+  "SourceEditor.editNode": [
+    "async.series",
+    "OwlSchema.getClassDescription",
+    "JSON.parse",
+    "JSON.stringify",
+    "Sparql_generic.getNodeInfos",
+    "result.forEach",
+    "Object.keys",
+    "common.fillSelectOptions",
+    "self.drawObjectValue",
+    "Object.keys",
+    "common.fillSelectOptions",
+    "self.drawObjectValue"
+  ],
+  "SourceEditor.drawObjectValue": [
+    "values.push",
+    "values.forEach",
+    "common.getRandomHexaId",
+    "keyLabel.replace"
+  ],
+  "SourceEditor.deleteEditingValue": [
+    "document.getElementById"
+  ],
+  "SourceEditor.getPredicateValueType": [],
+  "SourceEditor.saveEditingObject": [
+    "triples.push",
+    "mandatoryProps.indexOf",
+    "self.getPredicateValueType",
+    "predicate.indexOf",
+    "triples.push",
+    "predicate.indexOf",
+    "predicate.indexOf",
+    "triples.push",
+    "Sparql_generic.update"
+  ],
+  "SourceEditor.onSelectNewProperty": [
+    "self.drawObjectValue"
+  ],
+  "SourceEditor.onSelectNewAnnotation": [
+    "self.drawObjectValue"
+  ],
+  "SourceEditor.deleteEditingObject": [
+    "Sparql_generic.deleteTriples"
+  ],
+  "SourceEditor.showNodeInfos": [
+    "data.forEach",
+    "Sparql_common.getLabelFromId",
+    "defaultProps.indexOf",
+    "defaultProps.push",
+    "defaultProps.forEach",
+    "values.forEach",
+    "value.indexOf",
+    "values.forEach",
+    "value.indexOf"
+  ],
+  "Transform.substituteUris": [
+    "async.whilst",
+    "async.series",
+    "Sparql_common.getFromGraphStr",
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "subject.indexOf",
+    "oldTriples.push",
+    "common.getNewUri",
+    "newTriples.push",
+    "Sparql_generic.deleteTriples"
+  ],
+  "ADLquery.showJstreeNodeChildren": [
+    "Sparql_INDIVIDUALS.getObjectProperties",
+    "result.forEach",
+    "common.getRandomHexaId",
+    "jstreeData.push",
+    "common.getRandomHexaId",
+    "jstreeData.push",
+    "common.getRandomHexaId",
+    "jstreeData.push"
+  ],
+  "ADLquery.showNodeProperties": [
+    "async.series",
+    "Sparql_OWL.getObjectProperties",
+    "Sparql_OWL.getObjectRestrictions",
+    "self.getMatchingLabels",
+    "result.forEach",
+    "data.forEach",
+    "sourceObjs.push",
+    "self.getMatchingLabels",
+    "result.forEach",
+    "data.forEach",
+    "data.forEach",
+    "existingItems.indexOf",
+    "existingItems.push"
+  ],
+  "ADLquery.getJstreeConceptsContextMenu": [],
+  "ADLquery.selectTreeNodeFn": [
+    "self.showProperties",
+    "Sparql_schema.getClassPropertiesAndRanges",
+    "OwlSchema.setLabelsFromQueryResult",
+    "result.forEach",
+    "existingItems.indexOf",
+    "existingItems.push",
+    "Sparql_common.getLabelFromId",
+    "OwlSchema.setLabelsFromQueryResult",
+    "visjsGraph.getExistingIdsMap",
+    "children.forEach",
+    "Sparql_common.getLabelFromId",
+    "str.split",
+    "props.push",
+    "str.split",
+    "props.push",
+    "existingNodes.indexOf",
+    "jstreeData.push",
+    "props.forEach",
+    "existingNodes.indexOf",
+    "jstreeData.push",
+    "ADLquery.getJstreeConceptsContextMenu"
+  ],
+  "ADLquery.getMatchingLabels": [
+    "sourceData.forEach",
+    "labels.push",
+    "Sparql_common.setFilter",
+    "Sparql_common.getFromGraphStr",
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "targetObjs.push",
+    "range.indexOf",
+    "range.indexOf",
+    "common.fillSelectOptions",
+    "jstreeData.push",
+    "Math.random",
+    "nodes.forEach",
+    "classNodeIds.forEach",
+    "Object.keys",
+    "previousClasses.indexOf",
+    "previousClasses.indexOf",
+    "range.indexOf",
+    "value.indexOf",
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "cols.push",
+    "line.push",
+    "line.push",
+    "dataSet.push",
+    "nodes.forEach",
+    "str.replace",
+    "classNodeIds.forEach",
+    "props.forEach",
+    "remoteObjs.push",
+    "propChildrenIds.forEach",
+    "common.convertNumStringToNumber",
+    "remoteObjs.push",
+    "quantumObjs.push",
+    "JSON.stringify",
+    "$.ajax",
+    "cols.push",
+    "colNames.push",
+    "data.forEach",
+    "colNames.forEach",
+    "line.push",
+    "dataSet.push"
+  ],
+  "Lineage_classes.onLoaded": [
+    "sourceLabels.push",
+    "sourceLabels.sort",
+    "Lineage_types.init",
+    "Lineage_properties.init"
+  ],
+  "Lineage_classes.onSourceSelect": [
+    "Lineage_classes.drawTopConcepts",
+    "SourceBrowser.showThesaurusTopConcepts",
+    "self.initIndividualsPropertiesSelect"
+  ],
+  "Lineage_classes.jstreeContextMenu": [
+    "Lineage_classes.drawTopConcepts",
+    "SourceBrowser.showThesaurusTopConcepts",
+    "Lineage_classes.drawSimilarsNodes",
+    "Lineage_classes.drawSimilarsNodes"
+  ],
+  "Lineage_classes.selectTreeNodeFn": [
+    "ADLquery.showJstreeNodeChildren",
+    "self.addArbitraryNodeToGraph",
+    "SourceBrowser.openTreeNode"
+  ],
+  "Lineage_classes.initUI": [
+    "visjsGraph.clearGraph"
+  ],
+  "Lineage_classes.drawTopConcepts": [
+    "self.initUI",
+    "self.registerSource",
+    "Sparql_generic.getTopConcepts",
+    "result.forEach",
+    "ids.push",
+    "self.getSourceColor",
+    "GraphController.toVisjsData",
+    "self.drawNewGraph"
+  ],
+  "Lineage_classes.drawNewGraph": [
+    "visjsGraph.draw"
+  ],
+  "Lineage_classes.getGraphIdsFromSource": [
+    "existingNodes.forEach",
+    "sourceNodes.push"
+  ],
+  "Lineage_classes.addSourceChildrenToGraph": [
+    "self.getGraphIdsFromSource",
+    "self.addChildrenToGraph"
+  ],
+  "Lineage_classes.addChildrenToGraph": [
+    "visjsGraph.getNodeDescendantIds",
+    "Lineage_classes.getGraphSourcesIdsMap",
+    "Sparql_generic.getNodeChildren",
+    "self.getSourceColor",
+    "result.forEach",
+    "ids.push",
+    "visjsGraph.getExistingIdsMap",
+    "visjsGraph.getExistingIdsMap",
+    "self.getSourceColor",
+    "self.registerSource",
+    "expandedLevel.push",
+    "self.getSourceColor",
+    "common.removeDuplicatesFromArray",
+    "Object.keys",
+    "parentIds.forEach",
+    "keys.indexOf",
+    "orphans.push"
+  ],
+  "Lineage_classes.listClusterToClipboard": [
+    "common.copyTextToClipboard"
+  ],
+  "Lineage_classes.listClusterContent": [
+    "jstreeData.push",
+    "Lineage_classes.selectTreeNodeFn",
+    "SourceBrowser.getJstreeConceptsContextMenu"
+  ],
+  "Lineage_classes.openCluster": [
+    "self.listClusterToClipboard",
+    "self.getSourceColor",
+    "GraphController.toVisjsData"
+  ],
+  "Lineage_classes.drawSimilarsNodes": [
+    "Array.isArray",
+    "async.series",
+    "nodeObjs.forEach",
+    "words.push",
+    "nodes.push",
+    "nodes.forEach",
+    "words.push",
+    "common.sliceArray",
+    "common.sliceArray",
+    "async.eachSeries",
+    "Sparql_common.setFilter",
+    "Sparql_generic.getItems",
+    "result.forEach",
+    "similarIds.push",
+    "common.sliceArray",
+    "async.eachSeries",
+    "async.eachSeries",
+    "Sparql_common.setFilter",
+    "Sparql_common.setFilter",
+    "Sparql_generic.getItems",
+    "result.forEach",
+    "similars.push",
+    "ids.push",
+    "self.registerSource",
+    "visjsGraph.getExistingIdsMap",
+    "similars.forEach",
+    "self.getSourceColor",
+    "newEdges.push"
+  ],
+  "Lineage_classes.initIndividualsPropertiesSelect": [
+    "preferredProperties.forEach",
+    "item.lastIndexOf",
+    "item.lastIndexOf",
+    "item.substring",
+    "item.substring",
+    "jstreeData.push",
+    "jstreeData.push",
+    "Sparql_OWL.getIndividualProperties",
+    "result.forEach",
+    "jstreeData.push",
+    "jstreeData.push"
+  ],
+  "Lineage_classes.drawIndividualsProperties": [
+    "self.getGraphIdsFromSource",
+    "Sparql_OWL.getIndividualProperties",
+    "Object.keys",
+    "Lineage_classes.drawRestrictions",
+    "visjsGraph.getExistingIdsMap",
+    "self.getPropertyColor",
+    "result.forEach",
+    "self.drawNewGraph"
+  ],
+  "Lineage_classes.drawObjectProperties": [
+    "self.getGraphIdsFromSource",
+    "visjsGraph.getNodeDescendantIds",
+    "Sparql_OWL.getObjectProperties",
+    "Lineage_classes.drawRestrictions",
+    "visjsGraph.getExistingIdsMap",
+    "self.getSourceColor",
+    "result.forEach",
+    "Lineage_classes.drawRestrictions"
+  ],
+  "Lineage_classes.drawRestrictions": [
+    "self.getGraphIdsFromSource",
+    "Sparql_OWL.getObjectRestrictions",
+    "visjsGraph.getExistingIdsMap",
+    "self.getSourceColor",
+    "console.log",
+    "JSON.stringify",
+    "result.forEach"
+  ],
+  "Lineage_classes.graphNodeNeighborhood": [
+    "Sparql_OWL.getObjectProperties",
+    "visjsGraph.getExistingIdsMap",
+    "result.forEach",
+    "Sparql_common.getLabelFromId",
+    "Sparql_common.getLabelFromId",
+    "Lineage_classes.getSourceColor",
+    "Sparql_common.getFromGraphStr",
+    "Sparql_proxy.querySPARQL_GET_proxy",
+    "Lineage_classes.getSourceColor",
+    "visjsGraph.getExistingIdsMap",
+    "data.forEach",
+    "Sparql_common.getLabelFromId",
+    "Lineage_classes.drawNewGraph"
+  ],
+  "Lineage_classes.addParentsToGraph": [
+    "nodes.forEach",
+    "fixedNodes.push",
+    "Lineage_classes.getGraphSourcesIdsMap",
+    "Object.keys",
+    "async.eachSeries",
+    "Sparql_generic.getNodeParents",
+    "self.getSourceColor",
+    "GraphController.toVisjsData",
+    "visjsGraph.getExistingIdsMap",
+    "result.forEach",
+    "self.getSourceColor"
+  ],
+  "Lineage_classes.removeLastChildrenFromGraph": [],
+  "Lineage_classes.setGraphPopupMenus": [],
+  "Lineage_classes.zoomGraphOnNode": [
+    "nodes.indexOf",
+    "nodes.forEach",
+    "newNodes.push"
+  ],
+  "Lineage_classes.addArbitraryNodeToGraph": [
+    "visjsGraph.getExistingIdsMap",
+    "self.zoomGraphOnNode",
+    "Sparql_generic.getNodeParents",
+    "self.getSourceColor",
+    "visjsGraph.getExistingIdsMap",
+    "result.forEach",
+    "newNodeIds.push",
+    "newNodeIds.push",
+    "visjsGraph.getExistingIdsMap",
+    "self.registerSource",
+    "self.drawNewGraph",
+    "self.zoomGraphOnNode"
+  ],
+  "Lineage_classes.drawCfihosQuantumMapping": [
+    "common.getAllsourcesWithType",
+    "Array.isArray",
+    "nodeObjs.forEach",
+    "sourceIds.push",
+    "words.push",
+    "sourceIds.push",
+    "common.sliceArray",
+    "async.eachSeries",
+    "async.eachSeries",
+    "Sparql_common.setFilter",
+    "Sparql_generic.getItems",
+    "result.forEach",
+    "similars.push",
+    "ids.push",
+    "self.registerSource",
+    "visjsGraph.getExistingIdsMap",
+    "similars.forEach",
+    "self.getSourceColor"
+  ],
+  "Lineage_classes.getGraphSourcesIdsMap": [
+    "nodes.forEach",
+    "nodeIds.indexOf",
+    "self.setGraphPopupMenus",
+    "Lineage_classes.addChildrenToGraph",
+    "Lineage_classes.addChildrenToGraph",
+    "Lineage_classes.addParentsToGraph",
+    "Lineage_classes.drawSimilarsNodes",
+    "Lineage_classes.removeLastChildrenFromGraph",
+    "Lineage_classes.openCluster",
+    "Lineage_classes.listClusterToClipboard",
+    "Lineage_classes.listClusterContent",
+    "Lineage_classes.graphNodeNeighborhood",
+    "Lineage_classes.drawObjectProperties"
+  ],
+  "Lineage_classes.getSourceColor": [
+    "Object.keys"
+  ],
+  "Lineage_classes.getPropertyColor": [
+    "Object.keys"
+  ],
+  "Lineage_classes.registerSource": [
+    "document.getElementById",
+    "self.getSourceColor"
+  ],
+  "Lineage_classes.setCurrentSource": [],
+  "Lineage_classes.drawGraph": [],
+  "Lineage_classes.onPlusButton": []
+}
