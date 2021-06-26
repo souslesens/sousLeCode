@@ -68,17 +68,63 @@ var CodeEdition = (function () {
     }
 
 
-    self.editComments = function () {
+
+    self.saveComment=function() {
         var nodeData = Main.currentTreeNodeData
+        var comment = $("#commentEditionTA").val()
+        if(comment=="")
+        return;
+        var payload = {
+            saveFile: true,
+            fileName: nodeData.name+".txt",
+            content: comment
+        }
+
+
+        $.ajax({
+            type: "POST",
+            url: "/server",
+            data: payload,
+            dataType: "json",
+            success: function (result, textStatus, jqXHR) {
+              ;
+            }, error(err) {
+                return alert(err.toString())
+            }
+        })
+
+    }
+
+    self.editComments=function() {
+        var nodeData = Main.currentTreeNodeData
+
         $("#infosDiv").load("/snippets/commentEditionDialog.html")
 
         setTimeout(function () {
-            $("#commentEditionTA").val(Main.currentTreeNodeData.id)
-        }, 200)
-    }
 
-    self.saveComment()
-    var comment=$("#commentEditionTA").val()
+            var payload = {
+                getFileContent: true,
+                fileName:nodeData.name+".txt",
+
+            }
+
+
+            $.ajax({
+                type: "POST",
+                url: "/server",
+                data: payload,
+                dataType: "json",
+                success: function (result, textStatus, jqXHR) {
+                    if(result.done)
+                        return;
+                    $("#commentEditionTA").val(result.result)
+                }, error(err) {
+                    return alert(err.toString())
+                }
+            })
+        },200)
+
+    }
 
 
     return self;

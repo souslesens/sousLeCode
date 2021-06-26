@@ -34,8 +34,8 @@ var Main = (function () {
                     dirLabel = "_"
                 else
                     dirLabel = dir.replace(self.rootCodeDir, "")
-                dirLabel = dirLabel.replace(/\\/g, "/")
-
+                dirLabel = dirLabel.replace(/\\/g, "")
+                var dirName = dirLabel.replace(/\//g,"")
                 dirLabel = "<span style='color:" + color + "'>" + dirLabel + "</span>"
                 var file = result[fn].file
                 var range = result[fn].data.range
@@ -52,6 +52,7 @@ var Main = (function () {
                             parent: "#",
                             data: {
                                 type: "dir",
+                                name: dirName,
                                 id: dir,
                                 text: dirLabel,
                                 rootCodeDir: self.rootCodeDir
@@ -63,6 +64,7 @@ var Main = (function () {
 
                 if (!existingNodes[file]) {
                     existingNodes[file] = 1
+
                     jsTreedata.push(
                         {
                             id: file,
@@ -70,6 +72,9 @@ var Main = (function () {
                             parent: dir,
                             data: {
                                 type: "file",
+                                id: file,
+                                name: dirName + "_" + file,
+                                text: file,
                                 file: file,
                                 dir: dir,
                                 rootCodeDir: self.rootCodeDir
@@ -88,6 +93,7 @@ var Main = (function () {
                             data: {
                                 type: "object",
                                 id: obj,
+                                name: dirName + "_" + file + "_" + obj,
                                 text: obj,
                                 file: file,
                                 dir: dir,
@@ -107,6 +113,7 @@ var Main = (function () {
                             data: {
                                 type: "function",
                                 id: fn,
+                                name: dirName + "_" + file + "_" + obj + "_" + fn,
                                 text: fnLabel,
                                 file: file,
                                 dir: dir,
@@ -224,9 +231,9 @@ var Main = (function () {
     }
 
 
-    self.drawFunctionsGraph = function (nodeData, drawCallingFunctions,addToGraph) {
-        if(!nodeData)
-            nodeData=self.currentGraphNode.data
+    self.drawFunctionsGraph = function (nodeData, drawCallingFunctions, addToGraph) {
+        if (!nodeData)
+            nodeData = self.currentGraphNode.data
         var functions = []
         if (nodeData.type == "function")
             functions = [nodeData.id]
@@ -253,21 +260,21 @@ var Main = (function () {
         var visjsData = self.getCodeVisjsData(self.currentCodeMap, {
             functions: functions,
             drawCallingFunctions: drawCallingFunctions,
-            addToGraph:addToGraph
+            addToGraph: addToGraph
         })
 
 
-        if(addToGraph){
+        if (addToGraph) {
             visjsGraph.data.nodes.add(visjsData.nodes)
             visjsGraph.data.edges.add(visjsData.edges)
 
-        }else {
+        } else {
             var options = {
                 onclickFn: Main.onGraphNodeClick,
                 onRightClickFn: function (obj, point, event) {
                     self.currentGraphNode = obj
                     self.setGraphPopupMenus(obj, null);
-                    point.x+=$("#fnTreeDiv").width()
+                    point.x += $("#fnTreeDiv").width()
                     common.showPopup(point, "graphPopupDiv")
                 },
                 nodes: {
@@ -283,8 +290,6 @@ var Main = (function () {
 
 
     }
-
-
 
 
     self.setGraphPopupMenus = function (node, event) {
@@ -307,8 +312,8 @@ var Main = (function () {
 
         var visjsData = {nodes: [], edges: []}
         var existingNodes = {}
-        if(options.addToGraph)
-            existingNodes=visjsGraph.getExistingIdsMap()
+        if (options.addToGraph)
+            existingNodes = visjsGraph.getExistingIdsMap()
 
         function drawFn(fnObj) {
             var dir = fnObj.dir;
@@ -333,7 +338,7 @@ var Main = (function () {
                     label: obj,
                     shape: "box",
                     color: color,
-                    size:10,
+                    size: 10,
                     data: {
                         type: "function",
                         id: obj,
@@ -356,7 +361,7 @@ var Main = (function () {
                     label: fnObj.name,
                     shape: "dot",
                     color: color,
-                    size:10,
+                    size: 10,
                     data: {
                         type: "function",
                         id: fnObj.name,

@@ -1,0 +1,1 @@
+Contains all functions that generate et execute sparql queries on servers
