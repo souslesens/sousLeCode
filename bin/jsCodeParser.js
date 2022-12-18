@@ -49,6 +49,7 @@ var JsCodeParser = {
                 functions[fnName] = {
                     range: range,
                     params: paramNames,
+                    rootObject:rootObject,
                     calledFns: []
                 };
 
@@ -115,6 +116,8 @@ var JsCodeParser = {
                         }
                         recurse(child, null, rootObject, level++)
 
+                    }else{
+var x=child
                     }
 
                 }
@@ -123,6 +126,8 @@ var JsCodeParser = {
 
 
         var codeStr = "" + fs.readFileSync(filePath)
+        if(filePath.indexOf("common")>-1)
+            var x=3
         try {
             var comments = []
             var code = acorn.parse(codeStr, {
@@ -205,8 +210,7 @@ var JsCodeParser = {
         var fileCodeStr = ""
         async.eachSeries(fnNames, function (fnName, callbackEach) {
 
-            if (fnName.indexOf("loadADL_SQLModel") > -1)
-                var x = 3
+
             var fn = functionsMap[fnName]
             var filePath = fn.dir + fn.file;
 
@@ -219,9 +223,20 @@ var JsCodeParser = {
 
             var fnCodeStr = fileCodeStr.substring(range[0], range[1])
 
-            var length = range[1] - range[0]
+            fnCodeStr=fnCodeStr.replace(/self/g,fn.data.rootObject)
+          //  var length = range[1] - range[0]
             //  console.log(fnName+"  "+length+"   "+range[1]+"  "+ range[0])
+            var regex=/\$\(["']#([^"^'.]*)["']/g
 
+var DOMids=[];
+            var array=[]
+            while((array=regex.exec(fnCodeStr))!=null) {
+                if (array && array.length > 0) {
+                   DOMids.push(array[1])
+                }
+            }
+
+            functionsMap[fnName].data.DOMids=DOMids;
 
             for (var fnName2 in functionsMap) {
                 if (fnName2 == "ADLmappings.clearMappings")
@@ -315,10 +330,51 @@ var JsCodeParser = {
             onComment: comments,
         })
         var x = code
+    },functionsMapToCsv:function(functionsMap){
+        var str="dir\tfile\tfunction\tparams\tcalledFunction\\DOMids\\n"
+        for(var fn in functionsMap){
+            var fnObj=functionsMap[fn]
+            var dir=fnObj.dir.replace("D:\\webstorm\\souslesensVocables\\public\\vocables\\","")
+           var calledFns=fnObj.data.calledFns
+            str += dir + "\t" +fnObj.file + "\t" + fn+"\t"+"\n"
+            var params=""
+            fnObj.data.params.forEach(function(param,index){
+                if(index>0)
+                    params+="|"
+                params+=param
+            })
+            var DOMids=""
+            fnObj.data.DOMids.forEach(function(id,index){
+                if(index>0)
+                    DOMids+="|"
+                DOMids+=id
+            })
+            if(calledFns) {
+                calledFns.forEach(function (item) {
+                    str += dir  +"\t" +fnObj.file + "\t" + fn +"\t"+params+  "\t" + item+  "\t" + DOMids+"\n"
+
+
+                })
+            }
+
+
+
+
+
+        }
+        str=str.replace(/undefined/g,"")
+
+        fs.writeFileSync("D:\\webstorm\\sousLeCode\\public\\functions.txt",str)
+
+
+
+
+
     }
 
 
 }
+
 module.exports = JsCodeParser
 
 
@@ -337,6 +393,10 @@ if (true) {
             "external", "graph"
 
         ]
+    },function(err, functionsMap){
+
+        JsCodeParser.functionsMapToCsv(functionsMap)
+
     })
 }
 
