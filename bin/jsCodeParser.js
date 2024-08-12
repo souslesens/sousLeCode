@@ -558,7 +558,7 @@ module.exports = JsCodeParser
 var dirPath = "D:\\projects\\souslesensVocables\\public\\vocables\\modules\\"
 
 
-if (true) {
+if (false) {
     JsCodeParser.parseCodeDir(dirPath, {
         excludeDirs: [
             "external", "deleted","html"
@@ -566,7 +566,7 @@ if (true) {
         ]
     }, function (err, functionsMap) {
         var jsFiles = JsCodeParser.getImportAndExports(functionsMap)
-        JsCodeParser.writeImportAndExports(jsFiles)
+       // JsCodeParser.writeImportAndExports(jsFiles)
         //  JsCodeParser.functionsMapToCsv(functionsMap)
 
     })

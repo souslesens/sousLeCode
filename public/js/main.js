@@ -3,7 +3,7 @@ var Main = (function () {
     var self = {}
 
     self.propertyColors = {}
-    self.rootCodeDir = "D:\\webstorm\\souslesensVocables\\public\\vocables\\js\\"
+    self.rootCodeDir = "D:\\projects\\souslesensVocables\\public\\vocables\\modules\\"
     self.currentCodeMap = {}
     self.showCodeTree = function (dir) {
         var nodeData = {}

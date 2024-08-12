@@ -20,46 +20,54 @@ var HtmlParser = {
                     recurse(filePath + path.sep + file)
                 })
             } else {
-                var html = "" + fs.readFileSync(filePath)
-                var regexExport = /export default (.*)[\n\r ]/
-                var array  = regexExport.exec(html)
-                    if (array && array.length== 2) {
-                        var classId=array[1]
-                        html+="\nwindow."+classId+"="+classId+";"
-                        fs.writeFileSync(filePath,html)
-                        return;
+                if (filePath.endsWith("html")) {
+                    var html = "" + fs.readFileSync(filePath)
+
+
+                    /*   var regexExport = /export default (.*)[\n\r ]/
+                       var array  = regexExport.exec(html)
+                           if (array && array.length== 2) {
+                               var classId=array[1]
+                               html+="\nwindow."+classId+"="+classId+";"
+                               fs.writeFileSync(filePath,html)
+                               return;
+                           }*/
+
+                    // return;
+
+
+                    var regexId = /id=['"]([^'^".]*)['"]/g
+                    var DOMids = []
+                    var array = []
+                    while ((array = regexId.exec(html)) != null) {
+                        if (array && array.length > 0) {
+                            DOMids.push(array[1])
+                        }
                     }
 
-                return;
 
-
-
-
-
-
-                var regexId = /id=['"]([^'^".]*)['"]/g
-                var DOMids = []
-                var array = []
-                while ((array = regexId.exec(html)) != null) {
-                    if (array && array.length > 0) {
-                        DOMids.push(array[1])
+//icons
+                    var regexFn = /on.*=[ "']([^"^'.]*.[^"^'^\(.]*)[^>.]*>(.*)[src=]*"(.*)"/gm
+                    var actions = []
+                    var array = []
+                    while ((array = regexFn.exec(html)) != null) {
+                        if (array && array.length > 0) {
+                            actions.push({function: array[1].trim(), label: array[2].trim()})
+                        }
                     }
+//regular buttons
+                    var regexFn = /on.*=[ "']([^"^'.]*.[^"^'^\(.]*)[^>.]*>([^<.]*)/g
+
+                    while ((array = regexFn.exec(html)) != null) {
+                        if (array && array.length > 0) {
+                            actions.push({function: array[1].trim(), label: array[2].trim()})
+                        }
+                    }
+
+
+                    map[filePath] = {DOMids: DOMids, actions: actions}
                 }
-
-
-                var regexFn = /on[clickchange]*=[ "']([^"^'.]*.[^"^'^\(.]*)[^>.]*>([^<.]*)/g
-                var actions = []
-                var array = []
-                while ((array = regexFn.exec(html)) != null) {
-                    if (array && array.length > 0) {
-                        actions.push({function:array[1].trim(),label:array[2].trim()})
-                    }
-                }
-
-
             }
-
-            map[filePath] = {DOMids: DOMids, actions: actions}
 
 
         }
@@ -146,7 +154,7 @@ var str2=""+str
 module.exports = HtmlParser
 
 if( true) {
-    var dir = "D:\\webstorm\\souslesensVocables\\public\\vocables\\modules"
+    var dir = "D:\\projects\\souslesensVocables\\public\\vocables\\modules\\"
     HtmlParser.parseHtmlDir(dir, function (err, result) {
      //   HtmlParser.htmlMapToCsv(result)
 
