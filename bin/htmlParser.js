@@ -21,6 +21,22 @@ var HtmlParser = {
                 })
             } else {
                 var html = "" + fs.readFileSync(filePath)
+                var regexExport = /export default (.*)[\n\r ]/
+                var array  = regexExport.exec(html)
+                    if (array && array.length== 2) {
+                        var classId=array[1]
+                        html+="\nwindow."+classId+"="+classId+";"
+                        fs.writeFileSync(filePath,html)
+                        return;
+                    }
+
+                return;
+
+
+
+
+
+
                 var regexId = /id=['"]([^'^".]*)['"]/g
                 var DOMids = []
                 var array = []
@@ -29,6 +45,8 @@ var HtmlParser = {
                         DOMids.push(array[1])
                     }
                 }
+
+
                 var regexFn = /on[clickchange]*=[ "']([^"^'.]*.[^"^'^\(.]*)[^>.]*>([^<.]*)/g
                 var actions = []
                 var array = []
@@ -101,10 +119,42 @@ var HtmlParser = {
 
 
     }
+    , extractEvents:function(filePath){
+        var str=""+fs.readFileSync(filePath)
+        var regex=/on(click|change)=["']([^"]+)"/gmi
+var str2=""+str
+        var array=[]
+        var map= {}
+        map= {}
+        while((array=regex.exec(str))!=null){
+ var id=HtmlParser.getRandomHexaId(5)
+            str2=str2.replace(array[0],"data-eventId='"+id+"'")
+            map[id]={file:filePath,event:array[1],fn:array[2]}
+        }
+
+
+        var x=str2;
+        var y =map
+
+
+    },
+   getRandomHexaId: function (length) {
+        const str = Math.floor(Math.random() * Math.pow(16, length)).toString(16);
+        return "0".repeat(length - str.length) + str;
+    }
 }
 module.exports = HtmlParser
-var dir = "D:\\webstorm\\souslesensVocables\\public\\vocables\\snippets\\lineage"
-HtmlParser.parseHtmlDir(dir, function (err, result) {
-    HtmlParser.htmlMapToCsv(result)
 
-})
+if( true) {
+    var dir = "D:\\webstorm\\souslesensVocables\\public\\vocables\\modules"
+    HtmlParser.parseHtmlDir(dir, function (err, result) {
+     //   HtmlParser.htmlMapToCsv(result)
+
+    })
+}
+if( false){
+    var file = "D:\\webstorm\\souslesensVocables\\public\\vocables\\modules\\lineage\\lineageLeftPanel.html"
+    HtmlParser.extractEvents(file, function (err, result) {
+    })
+
+}

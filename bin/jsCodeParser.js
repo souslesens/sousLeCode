@@ -49,7 +49,7 @@ var JsCodeParser = {
                 functions[fnName] = {
                     range: range,
                     params: paramNames,
-                    rootObject:rootObject,
+                    rootObject: rootObject,
                     calledFns: []
                 };
 
@@ -93,8 +93,8 @@ var JsCodeParser = {
 
                     if (child["type"] && child["type"] == "VariableDeclarator")
                         rootObject = child.id.name
-                    var level2 = level++
-                    recurse(child, null, rootObject, level2);
+                 //   var level2 = level++
+                    recurse(child, null, rootObject, level+1);
                 })
             } else {
                 for (var key in parent) {
@@ -114,10 +114,10 @@ var JsCodeParser = {
                                 }
                             }
                         }
-                        recurse(child, null, rootObject, level++)
+                        recurse(child, null, rootObject, level+1)
 
-                    }else{
-var x=child
+                    } else {
+                        var x = child
                     }
 
                 }
@@ -126,15 +126,27 @@ var x=child
 
 
         var codeStr = "" + fs.readFileSync(filePath)
-        if(filePath.indexOf("common")>-1)
-            var x=3
+        if (filePath.indexOf("common") > -1)
+            var x = 3
         try {
             var comments = []
             var code = acorn.parse(codeStr, {
                 ecmaVersion: 2020,
                 onComment: comments,
+                sourceType :"module"
             })
-            recurse(code.body[0], "root", "", 0)
+            var selfVar=null;
+            code.body.forEach(function(item){
+                if(item.type=="VariableDeclaration"){
+                    selfVar=item
+                }
+            })
+            if(!selfVar){
+                console.log( "no variable declaration found")
+                return callback()
+            }
+
+            recurse(selfVar, "root", "", 0)
         } catch (e) {
             console.log(filePath) + e.toString()
         }
@@ -160,7 +172,10 @@ var x=child
 
                 var count = Object.keys(dirs)
                 var i = 0;
+
                 for (var key in dirs) {
+
+
                     var dirOk = true
                     if (options.excludeDirs) {
                         options.excludeDirs.forEach(function (item) {
@@ -173,6 +188,7 @@ var x=child
                     if (dirOk) {
 
                         var dir = dirs[key]
+                        console.log(key);
                         dir.forEach(function (file) {
 
                             if (options.file && file.name.indexOf(options.file) < 0)
@@ -223,20 +239,20 @@ var x=child
 
             var fnCodeStr = fileCodeStr.substring(range[0], range[1])
 
-            fnCodeStr=fnCodeStr.replace(/self/g,fn.data.rootObject)
-          //  var length = range[1] - range[0]
+            fnCodeStr = fnCodeStr.replace(/self/g, fn.data.rootObject)
+            //  var length = range[1] - range[0]
             //  console.log(fnName+"  "+length+"   "+range[1]+"  "+ range[0])
-            var regex=/\$\(["']#([^"^'.]*)["']/g
+            var regex = /\$\(["']#([^"^'.]*)["']/g
 
-var DOMids=[];
-            var array=[]
-            while((array=regex.exec(fnCodeStr))!=null) {
+            var DOMids = [];
+            var array = []
+            while ((array = regex.exec(fnCodeStr)) != null) {
                 if (array && array.length > 0) {
-                   DOMids.push(array[1])
+                    DOMids.push(array[1])
                 }
             }
 
-            functionsMap[fnName].data.DOMids=DOMids;
+            functionsMap[fnName].data.DOMids = DOMids;
 
             for (var fnName2 in functionsMap) {
                 if (fnName2 == "ADLmappings.clearMappings")
@@ -250,7 +266,7 @@ var DOMids=[];
                         if (p > 0) {
                             var fnNameSelf = "self" + fnName2.substring(p)
                             if (fnCodeStr.indexOf(fnNameSelf) > -1) {
-                               // console.log(fnNameSelf)
+                                // console.log(fnNameSelf)
                                 if (functionsMap[fnName].data.calledFns.indexOf(fnName2) < 0)
                                     functionsMap[fnName].data.calledFns.push(fnName2)
                             }
@@ -325,51 +341,204 @@ var DOMids=[];
     getCodeJson: function (filePath) {
         var comments = []
         var codeStr = "" + fs.readFileSync(filePath)
-        var code = acorn.parse(codeStr, {
-            ecmaVersion: 2020,
-            onComment: comments,
-        })
+        try {
+            var code = acorn.parse(codeStr, {
+                ecmaVersion: 2020,
+                onComment: comments,
+               sourceType: "module"
+            })
+        }
+        catch(e){
+            console.log("error " +e)
+        }
         var x = code
-    },functionsMapToCsv:function(functionsMap){
-        var str="dir\tfile\tfunction\tparams\tcalledFunction\\DOMids\\n"
-        for(var fn in functionsMap){
-            var fnObj=functionsMap[fn]
-            var dir=fnObj.dir.replace("D:\\webstorm\\souslesensVocables\\public\\vocables\\","")
-           var calledFns=fnObj.data.calledFns
-            str += dir + "\t" +fnObj.file + "\t" + fn+"\t"+"\n"
-            var params=""
-            fnObj.data.params.forEach(function(param,index){
-                if(index>0)
-                    params+="|"
-                params+=param
+    }, functionsMapToCsv: function (functionsMap) {
+        var str = "dir\tfile\tfunction\tparams\tcalledFunction\tDOMids\n"
+        for (var fn in functionsMap) {
+            var fnObj = functionsMap[fn]
+            var dir = fnObj.dir.replace("D:\\webstorm\\souslesensVocables\\public\\vocables\\", "")
+            var calledFns = fnObj.data.calledFns
+            str += dir + "\t" + fnObj.file + "\t" + fn + "\t" + "\n"
+            var params = ""
+            fnObj.data.params.forEach(function (param, index) {
+                if (index > 0)
+                    params += "|"
+                params += param
             })
-            var DOMids=""
-            fnObj.data.DOMids.forEach(function(id,index){
-                if(index>0)
-                    DOMids+="|"
-                DOMids+=id
+            var DOMids = ""
+            fnObj.data.DOMids.forEach(function (id, index) {
+                if (index > 0)
+                    DOMids += "|"
+                DOMids += id
             })
-            if(calledFns) {
+            if (calledFns) {
                 calledFns.forEach(function (item) {
-                    str += dir  +"\t" +fnObj.file + "\t" + fn +"\t"+params+  "\t" + item+  "\t" + DOMids+"\n"
+                    str += dir + "\t" + fnObj.file + "\t" + fn + "\t" + params + "\t" + item + "\t" + DOMids + "\n"
 
 
                 })
             }
 
 
+        }
+        str = str.replace(/undefined/g, "")
 
+        fs.writeFileSync("D:\\webstorm\\sousLeCode\\public\\functions.txt", str)
+
+
+    },
+
+
+    getImportAndExports: function (functionsMap) {
+
+        function getRelativeImportPath(file, importFile) {
+
+            var fileArray = file.split(path.sep)
+            var importFileArray = importFile.split(path.sep)
+
+            var fileLevels = fileArray.length;
+            var importFileLevels = importFileArray.length;
+
+var str=""
+
+
+            if (importFileLevels == fileLevels)
+                str=  path.relative(file,importFile);
+
+
+            else if (importFileLevels < fileLevels) {
+                 str=  path.relative(file,importFile);
+
+            }
+
+            else if (importFileLevels > fileLevels) {
+                str=  path.relative(file,importFile);
+            }
+
+
+            str=  str.replaceAll(path.sep, "/")
+            str=str.replace("../","./")
+             return str;
+
+          /*  var fileArray = file.split(path.sep)
+            var importFileArray = importFile.split(path.sep)
+
+            var fileLevels = fileArray.length;
+            var importFileLevels = importFileArray.length;
+
+
+            var importFile2 = importFileArray[importFileArray.length - 1]
+            if (importFileLevels == fileLevels)
+                return "./" + importFile2
+
+
+            else if (importFileLevels < fileLevels) {
+                var str = ""
+
+                for (var i = 0; i < fileLevels ; i++) {
+                   var k=-1
+                    if(importFileArray[i]!=fileArray[i]){
+                        k=i
+                    }
+                }
+
+
+
+
+                for (var i = 0; i < (fileLevels - importFileLevels); i++) {
+                    str += "../"
+                }
+                return str + importFile2
+            }
+
+                else if (importFileLevels > fileLevels) {
+                var fileDir = file.replace(fileArray[fileArray.length - 1], "");
+                importFile2 = importFile.replace(fileDir, "")
+
+                return "./" + importFile2.replaceAll(path.sep, "/")
+
+            }*/
 
 
         }
-        str=str.replace(/undefined/g,"")
-
-        fs.writeFileSync("D:\\webstorm\\sousLeCode\\public\\functions.txt",str)
 
 
+        var str = "";
+        var jsFiles = {}
+        for (var key in functionsMap) {
+            var fn = functionsMap[key]
+            var filePath = fn.dir + fn.file
+            if (!jsFiles[filePath])
+                jsFiles[filePath] = {imports: [], exports: []}
+
+            var exportFn = key.split(".")[0]
+            if (jsFiles[filePath].exports.indexOf(exportFn) < 0)
+                jsFiles[filePath].exports.push(exportFn)
+
+            var importDirs = {}
+
+            if(filePath.indexOf("KGcreator.js")>-1)
+                var x=3
+
+            fn.data.calledFns.forEach(function (calledFn) {
+
+                var exportFn = calledFn.split(".")[0];
+                if (!exportFn)
+                    return;
+                var calledFile = functionsMap[calledFn].dir + functionsMap[calledFn].file
 
 
+                if (calledFile == filePath)
+                    return;
 
+                var relativeCalleDirPath = getRelativeImportPath(filePath, calledFile)
+
+                var importStr = "import " + exportFn + " from \"" + relativeCalleDirPath +"\""
+                if (jsFiles[filePath].imports.indexOf(importStr) < 0) {
+                    jsFiles[filePath].imports.push(importStr)
+                }
+
+
+            })
+
+        }
+        return jsFiles
+//console.log(JSON.stringify(jsFiles,null,2))
+    },
+
+
+    writeImportAndExports : function (jsFiles) {
+
+        for(var filePath in jsFiles){
+            var scriptStr=""+fs.readFileSync(filePath)
+           var importsStr=""
+            jsFiles[filePath].imports.forEach(function(importStr){
+                importsStr+=importStr+"\n"
+            })
+            var exportsStr=""
+            jsFiles[filePath].exports.forEach(function(exportStr,index){
+                if(index>0)
+                    return;
+                exportsStr+="export default "+exportStr+"\n"
+            })
+           var  str=importsStr+"\n\n\n"+scriptStr+"\n\n\n"+  exportsStr
+
+            var outpuFilePath=filePath.replace(path.sep+"js",path.sep+"modules")
+
+            var dir=path.dirname(outpuFilePath)
+
+            try {
+                fs.mkdirSync(dir, { recursive: true })
+            } catch (error) {
+                var x=error
+            };
+
+            fs.writeFileSync(outpuFilePath,str)
+
+        }
+
+
+        console.log("done")
     }
 
 
@@ -385,17 +554,20 @@ module.exports = JsCodeParser
 //JsCodeParser.getCodeJson(filePath)
 //
 
-var dirPath = "D:\\webstorm\\souslesensVocables\\public\\vocables\\js"
+
+var dirPath = "D:\\projects\\souslesensVocables\\public\\vocables\\modules\\"
+
 
 if (true) {
     JsCodeParser.parseCodeDir(dirPath, {
         excludeDirs: [
-            "external", "graph"
+            "external", "deleted","html"
 
         ]
-    },function(err, functionsMap){
-
-        JsCodeParser.functionsMapToCsv(functionsMap)
+    }, function (err, functionsMap) {
+        var jsFiles = JsCodeParser.getImportAndExports(functionsMap)
+        JsCodeParser.writeImportAndExports(jsFiles)
+        //  JsCodeParser.functionsMapToCsv(functionsMap)
 
     })
 }
