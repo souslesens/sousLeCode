@@ -1,80 +1,145 @@
 var fs = require('fs')
 var path = require('path')
-var util = require('./util.')
+var util2 = require('./util.')
 const acorn = require("acorn");
+
 
 var HtmlParser = {
 
 
-    parseHtmlDir: function (filePath, callback) {
+    parseHtmlDir: function (rootDir, callback) {
 
 
         var map = {}
 
-
-        var recurse = function (filePath, rootObject, level) {
-
-            if (fs.lstatSync(filePath).isDirectory()) {
-                var files = fs.readdirSync(filePath)
-                files.forEach(function (file) {
-                    recurse(filePath + path.sep + file)
-                })
-            } else {
-                if (filePath.endsWith("html")) {
-                    var html = "" + fs.readFileSync(filePath)
-
-
-                    /*   var regexExport = /export default (.*)[\n\r ]/
-                       var array  = regexExport.exec(html)
-                           if (array && array.length== 2) {
-                               var classId=array[1]
-                               html+="\nwindow."+classId+"="+classId+";"
-                               fs.writeFileSync(filePath,html)
-                               return;
-                           }*/
-
-                    // return;
-
-
-                    var regexId = /id=['"]([^'^".]*)['"]/g
-                    var DOMids = []
-                    var array = []
-                    while ((array = regexId.exec(html)) != null) {
-                        if (array && array.length > 0) {
-                            DOMids.push(array[1])
-                        }
-                    }
-
-
-//icons
-                    var regexFn = /on.*=[ "']([^"^'.]*.[^"^'^\(.]*)[^>.]*>(.*)[src=]*"(.*)"/gm
-                    var actions = []
-                    var array = []
-                    while ((array = regexFn.exec(html)) != null) {
-                        if (array && array.length > 0) {
-                            actions.push({function: array[1].trim(), label: array[2].trim()})
-                        }
-                    }
-//regular buttons
-                    var regexFn = /on.*=[ "']([^"^'.]*.[^"^'^\(.]*)[^>.]*>([^<.]*)/g
-
-                    while ((array = regexFn.exec(html)) != null) {
-                        if (array && array.length > 0) {
-                            actions.push({function: array[1].trim(), label: array[2].trim()})
-                        }
-                    }
-
-
-                    map[filePath] = {DOMids: DOMids, actions: actions}
-                }
+        var allButtons = []
+        var allIcons = []
+        var actionsMap = {}
+        var options = {}
+        util2.getFilesInDirRecursively(rootDir, options, function (err, dirs) {
+            if (!options) {
+                options = {}
             }
 
+            var count = Object.keys(dirs)
+            var i = 0;
 
-        }
+            for (var dirName in dirs) {
 
-        recurse(filePath, "root", "", 0)
 
-        return callback(null, map)
+                var dirOk = true
+
+                if (dirOk) {
+
+                    var dir = dirs[dirName]
+                    // console.log(dirName);
+                    dir.forEach(function (file) {
+
+                        var filePath = dirName + file.name
+                        if (!filePath.endsWith("html")) {
+                            return;
+                        }
+                        console.log(filePath);
+
+                        if (filePath.indexOf("whiteboadPanel.html") > -1) {
+                            var x = 3
+                        }
+
+                        var html = "" + fs.readFileSync(filePath)
+
+
+                        var parser = require('node-html-parser');
+
+                        const root = parser.parse(html)
+
+                        var x = root
+
+                        var imgElements = root.getElementsByTagName("IMG")
+                        imgElements.forEach(function (element) {
+
+                            var srcValue = element.getAttribute("src")
+                            console.log(srcValue)
+                            if (srcValue && srcValue.indexOf("icon") > -1) {
+                                var buttonElement = element.parentNode
+
+
+                                var attributes = buttonElement.attributes
+
+
+                                for (var key in attributes) {
+                                    if (key.indexOf("on") == 0) {
+                                        allIcons.push({
+                                            file: file.name,
+                                            dir: dirName,
+                                            icon: srcValue,
+                                            innerHTML: buttonElement.innerHTML.replace(/[\r\t\n]/g,""),
+                                            action: attributes[key]
+
+                                        })
+                                        actionsMap[file.name + "_" + attributes[key]] = 1
+                                        //  console.log(element.innerHTML + "  " + key + "  " + attributes[key])
+                                    }
+
+                                }
+                            }
+
+
+                        })
+
+
+                        var buttonElements = root.getElementsByTagName("BUTTON")
+
+                        buttonElements.forEach(function (buttonElement) {
+
+
+                            var attributes = buttonElement.attributes
+
+
+                            for (var key in attributes) {
+                                if (key.indexOf("on") == 0) {
+
+                                    if (!actionsMap[file.name + "_" + attributes[key]]) {
+                                        allButtons.push({
+                                            file: file.name,
+                                            dir: dirName,
+                                            icon: "none",
+                                            innerHTML: buttonElement.innerHTML.replace(/[\r\t\n]/g,""),
+                                            action: attributes[key]
+
+                                        })
+                                    }
+                                }
+                            }
+                        })
+
+
+                    })
+                }
+
+            }
+        })
+
+        var x = allButtons
+        var y=allIcons
+
+
+
+
+        var str="file\tdir\ticon\taction\tinnerHtml\n"
+        allButtons.forEach(function(item){
+            str+=item.file+"\t"+item.dir+"\t"+item.icon+"\t"+item.action+"\t"+item.innerHTML+"\n"
+        })
+        var x=str
+        fs.writeFileSync("C:\\Users\\claud\\Downloads\\slsbuttons.csv",str)
+
+        var str="file\tdir\ticon\taction\tinnerHtml\n"
+        allIcons.forEach(function(item){
+            str+=item.file+"\t"+item.dir+"\t"+item.icon+"\t"+item.action+"\t"+item.innerHTML+"\r"
+        })
+        fs.writeFileSync("C:\\Users\\claud\\Downloads\\slsIcons.csv",str)
+        var x=str
+
+
 
     }
     , htmlMapToCsv: function (htmlMap) {
@@ -86,26 +151,27 @@ var HtmlParser = {
 
             var page = html.replace("D:\\webstorm\\souslesensVocables\\public\\vocables\\snippets\\", "")
             var pageArray = page.split(path.sep)
-         /*   pageArray = pageArray.reverse()
-            var pageStr = ""
-            for (var i = 0; i < 4; i++) {
-                var strx = ""
-                if (pageArray.length > i)
-                    strx = pageArray[i];
-                else
-                    strx = "level" + (i + 1);
-                if (i > 0)
-                    pageStr += "\t"
-                pageStr += strx
-            }*/
-            var pageStr=pageArray[1]+"\t"+pageArray[0]
+            /*   pageArray = pageArray.reverse()
+               var pageStr = ""
+               for (var i = 0; i < 4; i++) {
+                   var strx = ""
+                   if (pageArray.length > i)
+                       strx = pageArray[i];
+                   else
+                       strx = "level" + (i + 1);
+                   if (i > 0)
+                       pageStr += "\t"
+                   pageStr += strx
+               }*/
+            var pageStr = pageArray[1] + "\t" + pageArray[0]
 
 
             var functions = ""
             if (htmlObj.actions) {
                 htmlObj.actions.forEach(function (action, index) {
-                    if (action.function.indexOf("$") < 0)
-                        strFns +=  action.label + "\t"+action.function + "\t" + pageStr + "\n"
+                    if (action.function.indexOf("$") < 0) {
+                        strFns += action.label + "\t" + action.function + "\t" + pageStr + "\n"
+                    }
                 })
             }
             var DOMids = ""
@@ -127,40 +193,40 @@ var HtmlParser = {
 
 
     }
-    , extractEvents:function(filePath){
-        var str=""+fs.readFileSync(filePath)
-        var regex=/on(click|change)=["']([^"]+)"/gmi
-var str2=""+str
-        var array=[]
-        var map= {}
-        map= {}
-        while((array=regex.exec(str))!=null){
- var id=HtmlParser.getRandomHexaId(5)
-            str2=str2.replace(array[0],"data-eventId='"+id+"'")
-            map[id]={file:filePath,event:array[1],fn:array[2]}
+    , extractEvents: function (filePath) {
+        var str = "" + fs.readFileSync(filePath)
+        var regex = /on(click|change)=["']([^"]+)"/gmi
+        var str2 = "" + str
+        var array = []
+        var map = {}
+        map = {}
+        while ((array = regex.exec(str)) != null) {
+            var id = HtmlParser.getRandomHexaId(5)
+            str2 = str2.replace(array[0], "data-eventId='" + id + "'")
+            map[id] = {file: filePath, event: array[1], fn: array[2]}
         }
 
 
-        var x=str2;
-        var y =map
+        var x = str2;
+        var y = map
 
 
     },
-   getRandomHexaId: function (length) {
+    getRandomHexaId: function (length) {
         const str = Math.floor(Math.random() * Math.pow(16, length)).toString(16);
         return "0".repeat(length - str.length) + str;
     }
 }
 module.exports = HtmlParser
 
-if( true) {
-    var dir = "D:\\projects\\souslesensVocables\\public\\vocables\\modules\\"
+if (true) {
+    var dir = "D:\\projects\\souslesensVocables\\public\\vocables\\"
     HtmlParser.parseHtmlDir(dir, function (err, result) {
-     //   HtmlParser.htmlMapToCsv(result)
+        //   HtmlParser.htmlMapToCsv(result)
 
     })
 }
-if( false){
+if (false) {
     var file = "D:\\webstorm\\souslesensVocables\\public\\vocables\\modules\\lineage\\lineageLeftPanel.html"
     HtmlParser.extractEvents(file, function (err, result) {
     })
