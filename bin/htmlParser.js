@@ -14,6 +14,9 @@ var HtmlParser = {
 
         var allButtons = []
         var allIcons = []
+        var allClassIcons=[]
+        var allSelects=[]
+        var allInputs=[]
         var actionsMap = {}
         var options = {}
         util2.getFilesInDirRecursively(rootDir, options, function (err, dirs) {
@@ -39,11 +42,8 @@ var HtmlParser = {
                         if (!filePath.endsWith("html")) {
                             return;
                         }
-                        console.log(filePath);
+                      //  console.log(filePath);
 
-                        if (filePath.indexOf("whiteboadPanel.html") > -1) {
-                            var x = 3
-                        }
 
                         var html = "" + fs.readFileSync(filePath)
 
@@ -54,11 +54,12 @@ var HtmlParser = {
 
                         var x = root
 
+                        // bouttons avec  icons fixes
                         var imgElements = root.getElementsByTagName("IMG")
                         imgElements.forEach(function (element) {
 
                             var srcValue = element.getAttribute("src")
-                            console.log(srcValue)
+                         //   console.log(srcValue)
                             if (srcValue && srcValue.indexOf("icon") > -1) {
                                 var buttonElement = element.parentNode
 
@@ -72,7 +73,7 @@ var HtmlParser = {
                                             file: file.name,
                                             dir: dirName,
                                             icon: srcValue,
-                                            innerHTML: buttonElement.innerHTML.replace(/[\r\t\n]/g,""),
+                                            innerHTML: buttonElement.innerHTML.replace(/[\r\t\n]/g, ""),
                                             action: attributes[key]
 
                                         })
@@ -89,6 +90,8 @@ var HtmlParser = {
 
                         var buttonElements = root.getElementsByTagName("BUTTON")
 
+
+                        // bouttons sans icons
                         buttonElements.forEach(function (buttonElement) {
 
 
@@ -103,7 +106,7 @@ var HtmlParser = {
                                             file: file.name,
                                             dir: dirName,
                                             icon: "none",
-                                            innerHTML: buttonElement.innerHTML.replace(/[\r\t\n]/g,""),
+                                            innerHTML: buttonElement.innerHTML.replace(/[\r\t\n]/g, ""),
                                             action: attributes[key]
 
                                         })
@@ -113,33 +116,127 @@ var HtmlParser = {
                         })
 
 
+                        var buttonElements = root.getElementsByTagName("BUTTON")
+
+
+                        // bouttons sans icons fixes correspondant à une classe css
+                        buttonElements.forEach(function (buttonElement) {
+
+
+                            var attributes = buttonElement.attributes
+
+
+                            for (var key in attributes) {
+                                if (key.indexOf("class") == 0) {
+                                    allClassIcons.push({
+                                        file: file.name,
+                                        dir: dirName,
+                                        icon: attributes[key],
+                                        innerHTML: buttonElement.innerHTML.replace(/[\r\t\n]/g, ""),
+                                        action: attributes["onclick"] || attributes["onchange"]
+
+                                    })
+
+                                }
+                            }
+                        })
+
+
+
+                        var buttonElements = root.getElementsByTagName("SELECT")
+
+
+                        // select avec ou sans actions
+                        buttonElements.forEach(function (buttonElement) {
+
+
+                            var attributes = buttonElement.attributes
+
+
+                            for (var key in attributes) {
+                                var action=""
+                                var actionType=""
+                                if (key.indexOf("on") == 0) {
+                                    action=attributes[key]
+                                    actionType=key
+                                }
+
+
+                                        allSelects.push({
+                                            file: file.name,
+                                            dir: dirName,
+                                            icon: attributes["id"] || "",
+                                            innerHTML: buttonElement.innerHTML.replace(/[\r\t\n]/g, ""),
+                                            action: action,
+                                            actionType:actionType
+
+                                        })
+
+                            }
+                        })
+
+                        var inputElements = root.getElementsByTagName("INPUT")
+
+
+                        // select avec ou sans actions
+                        inputElements.forEach(function (buttonElement) {
+
+
+                            var attributes = buttonElement.attributes
+
+
+                            for (var key in attributes) {
+                                var action=""
+                                var actionType=""
+                                if (key.indexOf("on") == 0) {
+                                    action=attributes[key]
+                                    actionType=key
+                                }
+
+                                    allInputs.push({
+                                        file: file.name,
+                                        dir: dirName,
+                                        icon: attributes["id"] || "",
+                                        innerHTML: buttonElement.innerHTML.replace(/[\r\t\n]/g, ""),
+                                        action: action,
+                                        actionType:actionType
+
+                                    })
+
+                            }
+                        })
+
+
+
                     })
+
                 }
 
             }
         })
 
-        var x = allButtons
-        var y=allIcons
+
+
+
+HtmlParser.writeArray(allButtons,"slsbuttons")
+
+        HtmlParser.writeArray(allIcons,"slsIcons")
+        HtmlParser.writeArray(allClassIcons,"slsClassIcons")
+        HtmlParser.writeArray(allSelects,"slsSelects")
+        HtmlParser.writeArray(allInputs,"slsInputs")
 
 
 
 
-        var str="file\tdir\ticon\taction\tinnerHtml\n"
-        allButtons.forEach(function(item){
-            str+=item.file+"\t"+item.dir+"\t"+item.icon+"\t"+item.action+"\t"+item.innerHTML+"\n"
-        })
-        var x=str
-        fs.writeFileSync("C:\\Users\\claud\\Downloads\\slsbuttons.csv",str)
 
-        var str="file\tdir\ticon\taction\tinnerHtml\n"
-        allIcons.forEach(function(item){
+    },
+    writeArray:function(array,fileName){
+        var str="file\tdir\ticon\taction\tinnerHtml\tactionType\n"
+        array.forEach(function(item){
             str+=item.file+"\t"+item.dir+"\t"+item.icon+"\t"+item.action+"\t"+item.innerHTML+"\r"
         })
-        fs.writeFileSync("C:\\Users\\claud\\Downloads\\slsIcons.csv",str)
+        fs.writeFileSync("C:\\Users\\claud\\Downloads\\"+fileName+".csv",str)
         var x=str
-
-
 
     }
     , htmlMapToCsv: function (htmlMap) {
