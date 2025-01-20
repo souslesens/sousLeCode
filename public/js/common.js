@@ -449,6 +449,10 @@ var common = (function () {
             return prefix + common.getRandomHexaId(length)
         }
 
+        self.message=function(message){
+$("#infosDiv").html(message)
+        }
+
         self.copyTextToClipboard = function (text, callback) {
             async function copy() {
                 try {
@@ -457,7 +461,7 @@ var common = (function () {
                     if (callback)
                         return callback(null, "graph copied in clipboard");
                 } catch (err) {
-                    MainController.UI.message("graph copy failed")
+                    common.message("graph copy failed")
                     if (callback)
                         return callback(err);
                 }

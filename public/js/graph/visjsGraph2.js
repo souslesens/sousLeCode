@@ -459,8 +459,8 @@ var visjsGraph = (function () {
         var csv = visjsGraph.toCsv()
         common.copyTextToClipboard(csv, function (err, result) {
             if (err)
-                MainController.UI.message(err);
-            MainController.UI.message(result);
+               common.message(err);
+            common.message(result);
         })
 
     }
@@ -736,7 +736,7 @@ var visjsGraph = (function () {
             dataType: "json",
             success: function (result, textStatus, jqXHR) {
                 $('#visjsGraph_savedGraphsSelect').append($("<option></option>").attr("value", fileName).text(fileName));
-                MainController.UI.message("graph saved")
+                common.message("graph saved")
             }, error(err) {
                 return alert(err)
             }
